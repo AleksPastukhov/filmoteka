@@ -1,7 +1,6 @@
 // import * as myModule from './js';
 
-
-
+import './js/typed';
 
 // import FilmsApiService from './js/films-service';
 
@@ -20,5 +19,3 @@
 //     console.log(data);
 //   })
 //   .catch(err => console.log(err));
-
-import './js/typed';
