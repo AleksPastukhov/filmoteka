@@ -1,6 +1,6 @@
 import Typed from 'typed.js';
 
-var options = {
+let options = {
   strings: ['Filmoteka'],
   typeSpeed: 80,
   showCursor: false,
@@ -8,4 +8,4 @@ var options = {
   loopCount: 5,
 };
 
-var typed = new Typed('.header__logo', options);
+let typed = new Typed('.header__logo', options);
