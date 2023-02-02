@@ -1,16 +1,11 @@
 .footer {
     background-color: #F7F7F7;
   }
-  .footer__icon{
-    stroke: #FF6B08;
-    fill: #FF6B08;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
+ 
   .fo0ter__wrap {
     text-align: center;
     padding-top: 29px;
     padding-bottom: 28px;
-  
     color: #545454;
     font-family: 'Roboto';
     font-size: 14px;
@@ -26,7 +21,12 @@
   .copyrights {
     margin-bottom: 10px;
   }
+  .footer__icon{
+    stroke:  rgba(255, 107, 8, 1);
+    fill: #FF6B08;
+  }
   .footer__but{
+    color:rgba(84, 84, 84, 1);
     display: inline-block;
     border: none;
     background: transparent;
