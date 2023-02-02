@@ -10,42 +10,67 @@ export default class FilmsApiService {
 
   #typeRequest = {
     search: 'search/movie',
-    // video: `movie/${movieId}/videos`,
     trends: 'trending/movie/week',
-    // movieData: `${movieId}`,
+    movieData: '',
+    video: '',
   };
 
   constructor() {
     this.page = 1;
-    // this.userRequest = '';
-    // this.type = '';
   }
 
-  getUrl(type, qv) {
+  getUrl(type) {
     return `${this.#BASE_URL}${this.#typeRequest[type]}?api_key=${this.#KEY}`;
     // return `${this.#BASE_URL}${this.type}?api_key=${this.#KEY}&page=${
     //   this.page
     // }`;
   }
 
-  async getFilms(type, qv) {
-    const options = {
-      params: {
-        page: this.page,
-        query: qv,
-        language: 'en-US',
-        include_adult: false,
-      },
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
+  async getFilms(type, query, movieId) {
+    try {
+      this.movieDataById = movieId;
+      this.filmId = movieId;
 
-    // const axios = require('axios').default;
-    const respons = await axios.get(this.getUrl(type), options);
-    return respons.data;
-    // const result = await response.json();
-    // console.log(response);
+      const options = {
+        params: {
+          page: this.page,
+          query: query,
+          language: 'en-US',
+          include_adult: false,
+        },
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      };
+
+      const response = await axios.get(this.getUrl(type), options);
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  async getFilmById(type, movieId) {
+    try {
+      this.filmId = movieId;
+      this.movieDataById = movieId;
+
+      const options = {
+        params: {
+          page: this.page,
+          language: 'en-US',
+          include_adult: false,
+        },
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      };
+
+      const response = await axios.get(this.getUrl(type), options);
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
   get userReq() {
@@ -63,34 +88,55 @@ export default class FilmsApiService {
   set typeReq(newTypeReq) {
     return (this.type = newTypeReq);
   }
+
+  get movieDataById() {
+    return this.#typeRequest.movieData;
+  }
+
+  set movieDataById(newId) {
+    return (this.#typeRequest.movieData = `${newId}`);
+  }
+
+  get filmId() {
+    return this.#typeRequest.video;
+  }
+
+  set filmId(newId) {
+    return (this.#typeRequest.video = `movie/${newId}/videos`);
+  }
 }
 
-async function lordOfTheRingsAPI(page = 1, type = 'trends', movieId = 758009) {
-  const BASE_URL = 'https://api.themoviedb.org/3/';
-  const TOKEN =
-    'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOTVjMzkyOGJmMjMzNTdlOGE2NzA0NTk3M2M5NTE3OCIsInN1YiI6IjYzZDY0NDY4MjBlNmE1MDBkNTQzZDBjMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lD-Jn8MCWel133C-zeEATaTZg8SazetodXbbh1gi0C8';
-  const typeRequest = {
-    search: 'search/movie',
-    video: `movie/${movieId}/videos`,
-    trends: 'trending/movie/week',
-    movieData: `${movieId}`,
-  };
-  const options = {
-    params: {
-      page,
-      query: 'a',
-      language: 'en-US',
-      include_adult: false,
-    },
-    headers: {
-      Authorization: `Bearer ${TOKEN}`,
-      'Content-Type': 'application/json',
-    },
-  };
-
-  const respons = await axios.get(`${BASE_URL}${typeRequest[type]}`, options);
-  return respons.data;
-}
+// async function lordOfTheRingsAPI(page = 1, type = 'trends', movieId = 758009) {
+//   const BASE_URL = 'https://api.themoviedb.org/3/';
+//   const TOKEN =
+//     'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOTVjMzkyOGJmMjMzNTdlOGE2NzA0NTk3M2M5NTE3OCIsInN1YiI6IjYzZDY0NDY4MjBlNmE1MDBkNTQzZDBjMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lD-Jn8MCWel133C-zeEATaTZg8SazetodXbbh1gi0C8';
+//   const typeRequest = {
+//     search: 'search/movie',
+//     video: `movie/${movieId}/videos`,
+//     trends: 'trending/movie/week',
+//     movieData: `${movieId}`,
+//   };
+//   const options = {
+//     params: {
+//       page,
+//       query: 'a',
+//       language: 'en-US',
+//       include_adult: false,
+//     },
+//     headers: {
+//       Authorization: `Bearer ${TOKEN}`,
+//       'Content-Type': 'application/json',
+//     },
+//   };
+//
+//
+//
+//
+//
+//
+//   const respons = await axios.get(`${BASE_URL}${typeRequest[type]}`, options);
+//   return respons.data;
+// }
 
 // lordOfTheRingsAPI()
 //   .then(data => console.log(data))
