@@ -1,3 +1,52 @@
 <!-- FT-01 Зверстати хедер головної сторінки (мобілка, планшет, робочий стіл)
 FT-02 За натисканням на логотип/кнопку "Home" відображається головна сторінка 
 FT-03 За натисканням на кнопку "My Library" відображається бібліотека користувача -->
+
+<header class="header">
+  <div class="container">
+    <div class="header__naviganion">
+      <a href="../index.html" class="logo">
+        <svg class="logo__icon" width="24" height="24">
+          <use href="/src/images/icons.svg#film"></use>
+        </svg>
+        <p class="header__logo"></p>
+      </a>
+
+      <ul class="header__navigation-list">
+        <li class="header__navigation-item">
+          <a
+            href="../index.html"
+            class="header__navigation-link current__underline"
+            >Home</a
+          >
+        </li>
+        <li class="header__navigation-item">
+          <a href="../library.html" class="header__navigation-link"
+            >my library</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="search__field">
+      <form class="form__input" autocomplete="off">
+        <input
+          class="search__input"
+          type="text"
+          name="searchQuery"
+          placeholder="Movie search"
+        />
+
+        <button class="search__btn" type="submit">
+          <svg class="search__icon">
+            <use href="/src/images/icons.svg#search"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="search__error">
+      <p class="search__error-text is-hidden">
+        Search result not successful. Enter the correct movie name and
+      </p>
+    </div>
+  </div>
+</header>
