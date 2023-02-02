@@ -21,9 +21,6 @@ export default class FilmsApiService {
 
   getUrl(type) {
     return `${this.#BASE_URL}${this.#typeRequest[type]}?api_key=${this.#KEY}`;
-    // return `${this.#BASE_URL}${this.type}?api_key=${this.#KEY}&page=${
-    //   this.page
-    // }`;
   }
 
   async getFilms(type, query) {
