@@ -1,0 +1,143 @@
+.library {
+  padding-top: 20px;
+  //   padding-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 60px;
+    // padding-bottom: 60px;
+  }
+}
+
+.library__container {
+  min-width: 320px;
+  max-width: 440px;
+  padding: 0 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+    column-gap: 16px;
+  }
+}
+
+.library__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    row-gap: 32px;
+    column-gap: 16px;
+  }
+}
+
+.library__item {
+  flex-basis: 100%;
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 32px) / 2);
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex-basis: calc((100% - 32px) / 3);
+  }
+}
+
+// .library__link {
+// }
+
+.library__thumb {
+  border-radius: 5px;
+  overflow: hidden;
+
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 336px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 394px;
+  }
+}
+
+// .library__image {
+// }
+
+.library__movie {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+
+  color: var(--main-text-color);
+
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: calc(24 / 20);
+  }
+}
+
+.library__info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.library__genres {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  border-right: 1px solid var(--accent-color);
+
+  color: var(--accent-color);
+
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: calc(24 / 20);
+  }
+}
+
+.library__year {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+
+  color: var(--accent-color);
+
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: calc(24 / 20);
+  }
+}
+
+.library__rating {
+  padding: 1px 6px;
+  border-radius: 5px;
+  background-color: var(--accent-color);
+
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+
+  color: var(--secondary-text-color);
+
+  @media screen and (min-width: 1280px) {
+    padding: 3px 12px;
+  }
+}
