@@ -1,5 +1,4 @@
 // import * as myModule from './js';
-import './sass/index.scss';
 import './js/typed';
 
 // import FilmsApiService from './js/films-service';
