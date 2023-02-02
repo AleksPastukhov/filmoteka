@@ -26,11 +26,8 @@ export default class FilmsApiService {
     // }`;
   }
 
-  async getFilms(type, query, movieId) {
+  async getFilms(type, query) {
     try {
-      this.movieDataById = movieId;
-      this.filmId = movieId;
-
       const options = {
         params: {
           page: this.page,
@@ -105,6 +102,18 @@ export default class FilmsApiService {
     return (this.#typeRequest.video = `movie/${newId}/videos`);
   }
 }
+
+// Існує 3 типу запитів: trends, search і video.
+
+// у класа filmServise є 2 методи: getFilms(type, query) та getFilmById(type, movieId)
+
+//У параметру type пишемо один з типів запитів (trends, search, video відповідно, що вам треба фетчнути).
+
+// Якщо нам треба тільки трендові фільми, то використовуємо getFilms(type, query), де type буде строка 'trends', другий параметр не обов'язковий.
+
+// Якщо потрібні фільми за ключовим словом, то getFilms(type, query), де type це строка 'search', а query це те що буде вводитись в інпуті.
+
+// getFilmById(type, movieId) щоб получити key до трейлеру.
 
 // async function lordOfTheRingsAPI(page = 1, type = 'trends', movieId = 758009) {
 //   const BASE_URL = 'https://api.themoviedb.org/3/';
