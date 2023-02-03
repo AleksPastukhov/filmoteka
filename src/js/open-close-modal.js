@@ -41,6 +41,9 @@ modalOverl.addEventListener("click", function(event) {
 
 
 
+
+
+
 // Варіант з  лекцій!
 
 // const openModal = document.getElementById("openModal");
