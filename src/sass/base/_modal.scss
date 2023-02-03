@@ -1,4 +1,7 @@
 @media screen and (min-width: 320px) {
+  .container {
+    width: 100%;
+  }
   .level-intarest__name {
     font-family: 'Roboto';
     font-style: normal;
@@ -42,8 +45,11 @@
     color: #000000;
   }
 
+  // Кнопки добавлення та видилення фільму
+
   .modal-Btm {
     display: flex;
+    margin-top: 20px;
   }
   .addWatchmBtm {
     background: #ff6b01;
