@@ -1,4 +1,7 @@
 .library {
+  // Для позиціонування контенту аби футер завжди був притиснутий до низу
+  flex-grow: 1;
+
   padding-top: 20px;
   //   padding-bottom: 20px;
 

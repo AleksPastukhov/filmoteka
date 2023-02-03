@@ -16,6 +16,11 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 12px;
+
+  // Для позиціонування контенту аби футер завжди був притиснутий до низу
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 button {
