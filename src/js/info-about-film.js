@@ -33,6 +33,3 @@
 // }
 
 
-// function imegesFilm() {
-
-// }
