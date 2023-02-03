@@ -1,0 +1,98 @@
+.header__library {
+  height: 230px;
+  background-image: url('../images/mob-background-library-1x.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 40px;
+  padding-bottom: 62px;
+
+  @media screen and (min-width: 768px) {
+    height: 219px;
+    background-image: url('../images/tab-background-library-1x.jpg');
+    padding-bottom: 60px;
+  }
+  @media screen and (min-width: 1280px) {
+    height: 216px;
+    background-image: url('../images/desk-background-library-1x.jpg');
+  }
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header__library {
+    background-image: url('../images/mob-background-library-2x.jpg');
+    background-size: cover;
+    @media screen and (min-width: 768px) {
+      background-image: url('../images/tab-background-library-2x.jpg');
+    }
+    @media screen and (min-width: 1280px) {
+      background-image: url('../images/desk-background-library-2x.jpg');
+    }
+  }
+}
+
+.filter-list {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-list__item:not(:last-child) {
+  margin-right: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-right: 16px;
+  }
+}
+
+.filter-list__btn {
+  width: 130px;
+  height: 44px;
+  padding: 0;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-text-color);
+  background-color: transparent;
+  color: var(--secondary-text-color);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  align-items: center;
+  text-align: center;
+
+  scale: 1;
+  transition: scale var(--transition-duration) var(--timing-function);
+
+  &.is-active {
+    background-color: var(--accent-color);
+    border: var(--accent-color);
+    box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 152px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 148px;
+    height: 42px;
+  }
+  &:hover {
+    scale: 1.1;
+    box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+    background-color: var(--accent-color);
+    border: var(--accent-color);
+  }
+}
+
+.header__navigation-library {
+  margin-bottom: 60px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
