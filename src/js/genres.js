@@ -5,7 +5,7 @@ const filmsApiService = new FilmsApiService();
 
 export const DATA_STORAGE = 'genresObj';
 
-export default function getGenres() {
+export function saveGenresToLocalStorage() {
   return filmsApiService
     .getFilms('genre')
     .then(result => result.genres)
