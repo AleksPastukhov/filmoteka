@@ -8,3 +8,47 @@
 
 // - створюємо розмітку для головної сторінки
 // - рендеримо розмітку в контейнер (container-home) головної cторінки
+import Pagination from 'tui-pagination';
+const paginationContainer = document.querySelector('#pagination');
+import FilmsApiService from './films-service';
+import getGenres from './genres';
+import { renderFilmsToGallery } from './galleryFilmsMarkup';
+
+const filmsApiService = new FilmsApiService();
+
+async function onFirstLoad() {
+  await filmsApiService
+    .getFilms('trends', (page = 1))
+    .then(data => {
+      if (!data.results) {
+        return;
+      }
+      renderFilmsToGallery(data.results);
+    })
+    .catch(err => console.log(err));
+}
+
+onFirstLoad();
+
+//   const pagination = new Pagination(paginationContainer, {
+//     totalItems: `${data.total_results}`,
+//     itemsPerPage: 20,
+//     visiblePages: 5,
+//     centerAlign: true,
+//   });
+
+//   pagination.reset(data.total_results);
+//   pagination.on('beforeMove', e => {
+//     page = e.page;
+//     apiService.getFilms('trends', page).then(data => {
+//       if (!data.results) {
+//         return;
+//       }
+
+//       renderFilmsGallery(data.results);
+//       window.scrollTo({
+//         behavior: 'smooth',
+//         top: 250,
+//       });
+//     });
+//   });
