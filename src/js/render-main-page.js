@@ -37,7 +37,7 @@ async function onFirstLoad() {
 
       pagination.reset(data.total_results);
       pagination.on('beforeMove', e => {
-        page = e.page;
+        let page = e.page;
         filmsApiService.getFilms('trends', page).then(data => {
           if (!data.results) {
             return;
