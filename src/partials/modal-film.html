@@ -1,5 +1,5 @@
 <!-- FT-16 Зверстати шаблон модалки одного фільму (мобілка, планшет, робочий стіл) -->
-<div class="modal-film-main container">
+<div class="modal-film-main container backdrop is-hidden">
     <div class="img-posters">
         <img class="img-film container" src="#" alt="#">
     </div>
@@ -33,7 +33,7 @@
             </tbody>
         </table>
         <p class="comment-title">About</p>
-        <li class="about-film">
+        <p class="about-film">
             Four of the West’s most infamous outlaws assemble to steal a huge stash of gold from the most corrupt
             settlement
             of the
@@ -45,16 +45,25 @@
             bank! As tensions rise, things go from bad to worse as they realise the bags of gold are filled with lead...
             they’ve
             been double crossed – but by who and how?
-        </li>
-        <div class="modal-Btm">
-            <button class="addWatchmBtm" type="submit">add to Watched</button>
-            <button class="addQueueBtm" type="submit">add to queue</button>
-        </div>
+        </p>
+        <ul class="modal-Btm">
+            <li>
+                <button class="addWatchmBtm" type="submit">add to Watched</button>
+            </li>
+            <li>
+                <button class="addQueueBtm" type="submit">add to queue</button>
+            </li>
+
+
+        </ul>
     </div>
 
 
-    <svg class="svg-close" width="14" height="14">
-        <use href="./images/icons.svg#close"></use>
-    </svg>
+    <button type="button">
+        <svg class="svg-close" width="14" height="14">
+            <use href="./images/icons.svg#close"></use>
+        </svg>
+    </button>
+
 
 </div>
