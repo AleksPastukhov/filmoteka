@@ -11,14 +11,13 @@
 import Pagination from 'tui-pagination';
 const paginationContainer = document.querySelector('#pagination');
 import FilmsApiService from './films-service';
-import getGenres from './genres';
 import { renderFilmsToGallery } from './galleryFilmsMarkup';
 
 const filmsApiService = new FilmsApiService();
 
 async function onFirstLoad() {
   await filmsApiService
-    .getFilms('trends', (page = 1))
+    .getFilms('trends')
     .then(data => {
       if (!data.results) {
         return;
