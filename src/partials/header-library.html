@@ -2,3 +2,41 @@
 FT-13 Після натискання на логотип відображається головна сторінка 
 FT-14 За натисканням на кнопку "Watched" показуються переглянуті фільми користувача 
 FT-15 За натисканням на кнопку "Queue" показуються фільми додані в чергу користувача -->
+
+<header class="header__library">
+  <div class="container">
+    <div class="header__naviganion header__navigation-library">
+      <a href="./index.html" class="logo">
+        <svg class="logo__icon" width="24" height="24">
+          <use href="/src/images/icons.svg#film"></use>
+        </svg>
+        <p class="header__logo"></p>
+      </a>
+
+      <ul class="header__navigation-list">
+        <li class="header__navigation-item">
+          <a href="./index.html" class="header__navigation-link">Home</a>
+        </li>
+        <li class="header__navigation-item">
+          <a
+            href="./library.html"
+            class="header__navigation-link current__underline"
+            >my library</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="filter">
+      <ul class="filter-list">
+        <li class="filter-list__item">
+          <button type="button" class="filter-list__btn watched is-active">
+            Watched
+          </button>
+        </li>
+        <li class="filter-list__item">
+          <button type="button" class="filter-list__btn queue">Queue</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

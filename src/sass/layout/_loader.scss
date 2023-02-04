@@ -1,0 +1,195 @@
+// preloader
+@keyframes background-animate {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  transition: 1s visibility, 1s opacity;
+  visibility: visible;
+  opacity: 1;
+
+  &.done {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #10181d; // #263238;
+}
+
+.loader__loading {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 1.2;
+  color: transparent;
+  -webkit-text-stroke: 0.1vw #ff001b;
+  text-transform: uppercase;
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+  }
+}
+
+.loader__loading::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #ff001b;
+  -webkit-text-stroke: 0vw #ff001b;
+  border-right: 2px solid #ff001b;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+  @media screen and (max-width: 768px) {
+    border-right: 0.75px solid #ff001b;
+  }
+}
+@keyframes animate {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+}
+
+// spinner
+$animationLength: 1.5s;
+$animationRadius: 24px;
+$dotSize: 16px;
+
+.spinner {
+  position: fixed;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.dot {
+  display: inline-block;
+  width: $dotSize;
+  height: $dotSize;
+  border-radius: $dotSize * 0.5;
+  position: absolute;
+}
+
+.dot-1 {
+  left: calc(50% + $animationRadius);
+  animation: animateDot1 $animationLength linear infinite;
+  background-color: #fd7d12;
+}
+
+.dot-2 {
+  background-color: #ff6b08;
+  left: calc(50% + $animationRadius * 2);
+  animation: animateDot2 $animationLength linear infinite;
+  animation-delay: calc($animationLength / 3);
+}
+
+.dot-3 {
+  left: calc(50% + $animationRadius);
+  animation: animateDot3 $animationLength linear infinite;
+  background-color: #f4d941;
+}
+
+.dot-4 {
+  z-index: -1;
+  left: calc(50% + $animationRadius * 2);
+  animation: animateDot4 $animationLength linear infinite;
+  animation-delay: calc($animationLength / 3);
+  background-color: #faa225;
+}
+
+@keyframes animateDot1 {
+  0% {
+    transform: rotate(0deg) translateX(-$animationRadius);
+  }
+  25% {
+    transform: rotate(180deg) translateX(-$animationRadius);
+  }
+  75% {
+    transform: rotate(180deg) translateX(-$animationRadius);
+  }
+  100% {
+    transform: rotate(360deg) translateX(-$animationRadius);
+  }
+}
+
+@keyframes animateDot2 {
+  0% {
+    transform: rotate(-0deg) translateX(-$animationRadius);
+  }
+  25% {
+    transform: rotate(-180deg) translateX(-$animationRadius);
+  }
+  75% {
+    transform: rotate(-180deg) translateX(-$animationRadius);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(-$animationRadius);
+  }
+}
+
+@keyframes animateDot3 {
+  0% {
+    transform: rotate(0deg) translateX($animationRadius);
+  }
+  25% {
+    transform: rotate(180deg) translateX($animationRadius);
+  }
+  75% {
+    transform: rotate(180deg) translateX($animationRadius);
+  }
+  100% {
+    transform: rotate(360deg) translateX($animationRadius);
+  }
+}
+
+@keyframes animateDot4 {
+  0% {
+    transform: rotate(-0deg) translateX($animationRadius);
+  }
+  25% {
+    transform: rotate(-180deg) translateX($animationRadius);
+  }
+  75% {
+    transform: rotate(-180deg) translateX($animationRadius);
+  }
+  100% {
+    transform: rotate(-360deg) translateX($animationRadius);
+  }
+}
+
+.spinner.hidden {
+  display: none;
+}

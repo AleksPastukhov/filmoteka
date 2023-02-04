@@ -1,0 +1,49 @@
+.home {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  //   background-color: #ffffff;
+  background-color: #e2f4f4ec;
+}
+
+// <!-- Для тесту - початок-->
+.cards__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  @media screen and (min-width: 320px) {
+    gap: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    gap: 32px 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 32px 15.5px;
+  }
+}
+.cards__thumb {
+  background-color: rgb(145, 135, 222);
+  width: 100%;
+  @media screen and (min-width: 320px) {
+    width: 280px;
+    height: 440px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+    height: 495px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 395px;
+    height: 634px;
+  }
+}
+.cards__text {
+  padding-top: 120px;
+  font-size: 50px;
+  text-align: center;
+}
+// <!-- Для тесту - кінець-->

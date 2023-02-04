@@ -13,6 +13,7 @@ export default class FilmsApiService {
     trends: 'trending/movie/week',
     movieData: '',
     video: '',
+    genre: 'genre/movie/list',
   };
 
   constructor() {
