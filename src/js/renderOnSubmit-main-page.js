@@ -18,11 +18,15 @@ function getFilmsOnSubmit(evt) {
   const inputValue = evt.currentTarget.searchQuery.value;
   console.log(inputValue);
 
-  filmsApiService.getFilms('search', inputValue).then(films => {
-    console.log(films.results);
-    if (films.results.length === 0) {
-      console.log('NO FILMS');
-    }
-    renderFilmsToGallery(films.results);
-  });
+  filmsApiService
+    .getFilms('search', inputValue)
+    .then(films => {
+      console.log(films.results);
+      if (films.results.length === 0) {
+        console.log('NO FILMS');
+      }
+      renderFilmsToGallery(films.results);
+    })
+    .catch(err => console.log(err))
+    .finally(form.reset());
 }
