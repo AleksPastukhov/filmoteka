@@ -2,6 +2,7 @@
 import './js/typed';
 import './js/loader';
 import './js/local-storage-info';
+import './js/renderOnSubmit-main-page';
 
 // import FilmsApiService from './js/films-service';
 
