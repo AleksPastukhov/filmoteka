@@ -4,35 +4,32 @@
 // Посилання на документацію для запиту повної інформації про можливий трейлер на YouTube: https://developers.themoviedb.org/3/movies/get-movie-videos
 
 
-// import axios from 'axios';
 
-// async function getTrendsFilmsAPI(page = 1, type = 'trends', movieId = 758009) {
-//   const BASE_URL = 'https://api.themoviedb.org/3/';
-//   const TOKEN =
-//     'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOTVjMzkyOGJmMjMzNTdlOGE2NzA0NTk3M2M5NTE3OCIsInN1YiI6IjYzZDY0NDY4MjBlNmE1MDBkNTQzZDBjMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lD-Jn8MCWel133C-zeEATaTZg8SazetodXbbh1gi0C8';
-//   const typeRequest = {
-//     search: 'search/movie',
-//     video: movie/${movieId}/videos,
-//     trends: 'trending/movie/week',
-//     movieData: ${movieId},
-//   };
-//   const options = {
-//     params: {
-//       page,
-//       query: 'a',
-//       language: 'en-US',
-//       include_adult: false,
-//     },
-//     headers: {
-//       Authorization: Bearer ${TOKEN},
-//       'Content-Type': 'application/json',
-//     },
-//   };
+// fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=008ad61af513926e956f6d36edd6996c")
+//     .then(response => response.json()).then(data => console.log(data));
+    
+// async getData() {
+//     const response = fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=008ad61af513926e956f6d36edd6996c");
+//     return response.json();
+// };
+// getData().then(response => response.json())
 
-//   const respons = await axios.get(${BASE_URL}${typeRequest[type]}, options);
-//   return respons.data;
+
+
+
+
+// const addFilmsUrl = 'https://api.themoviedb.org/3/trending/movie/day?api_key=008ad61af513926e956f6d36edd6996c';
+// const img = document.querySelector(".img-film");
+
+// const getFilmImg = async () => {
+//     try {
+//  const film = fetch(`${addFilmsUrl}`)
+//     return await (film).json()
+//     }
+//     catch {
+//         console.log("Error")
+//     }
+//     console.log(film);
 // }
 
-// getTrendsFilmsAPI()
-//   .then(data => console.log(data))
-//   .catch(err => console.log(err));
+
