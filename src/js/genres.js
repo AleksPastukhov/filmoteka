@@ -22,7 +22,7 @@ export function saveGenresToLocalStorage() {
       });
       // console.log(genreById);
       const allGenres = Object.assign({}, ...genreById);
-      console.log(allGenres);
+      // console.log(allGenres);
       saveDataToLocalStorage(DATA_STORAGE, allGenres);
     });
 }

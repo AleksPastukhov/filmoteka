@@ -12,8 +12,11 @@ import Pagination from 'tui-pagination';
 const paginationContainer = document.querySelector('#pagination');
 import FilmsApiService from './films-service';
 import { renderFilmsToGallery } from './galleryFilmsMarkup';
+import { saveGenresToLocalStorage } from './genres';
 
 const filmsApiService = new FilmsApiService();
+
+saveGenresToLocalStorage();
 
 async function onFirstLoad() {
   await filmsApiService
@@ -22,6 +25,7 @@ async function onFirstLoad() {
       if (!data.results) {
         return;
       }
+
       renderFilmsToGallery(data.results);
     })
     .catch(err => console.log(err));
