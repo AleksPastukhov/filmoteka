@@ -16,3 +16,6 @@
 //     console.log(data);
 //   })
 //   .catch(err => console.log(err));
+import './js/galleryMarkup';
+import './js/render-main-page';
+import './js/films-service';

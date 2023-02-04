@@ -21,19 +21,20 @@ export default class FilmsApiService {
 
   getUrl(type) {
     return `${this.#BASE_URL}${this.#typeRequest[type]}?api_key=${this.#KEY}`;
-    // return `${this.#BASE_URL}${this.type}?api_key=${this.#KEY}&page=${
-    //   this.page
-    // }`;
+    // return `${this.#BASE_URL}${this.#typeRequest[type]}?api_key=${
+    //   this.#KEY
+    // }&page=${this.page}`;
   }
 
-  async getFilms(type, query, movieId) {
+  async getFilms(type, page, query, movieId) {
     try {
+      console.log(page);
       this.movieDataById = movieId;
       this.filmId = movieId;
 
       const options = {
         params: {
-          page: this.page,
+          page: page,
           query: query,
           language: 'en-US',
           include_adult: false,
