@@ -158,12 +158,9 @@
   .container {
     width: 100%;
   }
-  //   .modal-film-main {
-  //     display: flex;
-  //   }
-  // Poster of Film
 
   .img-film {
+    display: flex;
     width: 264px;
     height: 374px;
     background: gainsboro;
@@ -176,6 +173,19 @@
     font-size: 20px;
     line-height: 1.2;
     color: var(--main-text-color);
+    margin-top: 40px;
+  }
+  .modal-film-main {
+    display: flex;
+    position: relative;
+  }
+  .img-posters {
+    display: flex;
+  }
+  .film-commercial {
+    display: flex;
+    flex-direction: column;
+    margin-left: 68px;
   }
 
   .level-intarest__name {
@@ -229,13 +239,8 @@
     width: 100%;
     margin-top: 20px;
   }
-  .tr {
-    width: 100%;
-  }
-  .addWatchmBtm {
-    background: var(--accent-color);
-    border-radius: 5px;
 
+  .addWatchmBtm {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -246,12 +251,14 @@
     align-items: center;
     text-align: center;
     text-transform: uppercase;
-    color: var(--secondary-text-color);
+    color: var(--main-text-color);
+    border-radius: 5px;
 
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 27px;
-    padding-right: 27px;
+    padding-top: 14px;
+    padding-bottom: 12px;
+    padding-left: 9px;
+    padding-right: 9px;
+    width: 125px;
 
     margin-right: 20px;
   }
@@ -270,8 +277,17 @@
     color: var(--main-text-color);
 
     padding: 13px;
+    width: 125px;
 
     border: 1px solid var(--main-text-color);
     border-radius: 5px;
+  }
+
+  .svg-close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    // border: 2px solid #000000;
+    transform: rotate(-90deg);
   }
 }
