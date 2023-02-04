@@ -1,4 +1,4 @@
-const getFilmCardInnerHTMLString = ({ poster_path, release_date, title,genre_ids, id,vote_average }) => {
+const getFilmCardInnerHTMLString = ({ poster_path, release_date, title, genre_ids, id, vote_average }) => {
     
     const formatted_release_date = new Date(release_date).getFullYear();
 
@@ -54,49 +54,49 @@ const renderFilmCards = (results, options) => {
     })
 } 
 
-// const test = renderFilmCards([
-//     {
-//             "adult": false,
-//             "backdrop_path": "/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg",
-//             "genre_ids": [
-//                 28,
-//                 12,
-//                 878
-//             ],
-//             "id": 284054,
-//             "original_language": "en",
-//             "original_title": "Black Panther",
-//             "overview": "Після того, як у Ваканді були виявлені поклади металу, який може поглинати вібрацію, над жителями цієї країни нависла загроза. Бажаючі збагатитися несли руйнування і смерть. За легендою, таємничий воїн — Чорна Пантера — оберігав ці місця від непрошених гостей. Тепер принцу Т’Чаллу доведеться стати Чорною Пантерою, щоби врятувати свій народ.",
-//             "popularity": 251.082,
-//             "poster_path": "/iA1SIInNM3mU2w9BgD6VIOUOk7i.jpg",
-//             "release_date": "2018-02-13",
-//             "title": "Чорна Пантера",
-//             "video": false,
-//             "vote_average": 7.4,
-//             "vote_count": 20244
-//     },
-//     {
-//             "adult": false,
-//             "backdrop_path": "/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg",
-//             "genre_ids": [
-//                 28,
-//             12,
-//                 878
-//             ],
-//             "id": 284054,
-//             "original_language": "en",
-//             "original_title": "Black Panther",
-//             "overview": "Після того, як у Ваканді були виявлені поклади металу, який може поглинати вібрацію, над жителями цієї країни нависла загроза. Бажаючі збагатитися несли руйнування і смерть. За легендою, таємничий воїн — Чорна Пантера — оберігав ці місця від непрошених гостей. Тепер принцу Т’Чаллу доведеться стати Чорною Пантерою, щоби врятувати свій народ.",
-//             "popularity": 251.082,
-//             "poster_path": "/iA1SIInNM3mU2w9BgD6VIOUOk7i.jpg",
-//             "release_date": "3033-02-13",
-//             "title": "Чорна Пантера",
-//             "video": false,
-//             "vote_average": 7.4,
-//             "vote_count": 20244
-//     },
-// ])
+const test = renderFilmCards([
+    {
+            "adult": false,
+            "backdrop_path": "/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg",
+            "genre_ids": [
+                28,
+                12,
+                878
+            ],
+            "id": 284054,
+            "original_language": "en",
+            "original_title": "Black Panther",
+            "overview": "Після того, як у Ваканді були виявлені поклади металу, який може поглинати вібрацію, над жителями цієї країни нависла загроза. Бажаючі збагатитися несли руйнування і смерть. За легендою, таємничий воїн — Чорна Пантера — оберігав ці місця від непрошених гостей. Тепер принцу Т’Чаллу доведеться стати Чорною Пантерою, щоби врятувати свій народ.",
+            "popularity": 251.082,
+            "poster_path": "/iA1SIInNM3mU2w9BgD6VIOUOk7i.jpg",
+            "release_date": "2018-02-13",
+            "title": "Чорна Пантера",
+            "video": false,
+            "vote_average": 7.4,
+            "vote_count": 20244
+    },
+    {
+            "adult": false,
+            "backdrop_path": "/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg",
+            "genre_ids": [
+                28,
+            12,
+                878
+            ],
+            "id": 284054,
+            "original_language": "en",
+            "original_title": "Black Panther",
+            "overview": "Після того, як у Ваканді були виявлені поклади металу, який може поглинати вібрацію, над жителями цієї країни нависла загроза. Бажаючі збагатитися несли руйнування і смерть. За легендою, таємничий воїн — Чорна Пантера — оберігав ці місця від непрошених гостей. Тепер принцу Т’Чаллу доведеться стати Чорною Пантерою, щоби врятувати свій народ.",
+            "popularity": 251.082,
+            "poster_path": "/iA1SIInNM3mU2w9BgD6VIOUOk7i.jpg",
+            "release_date": "3033-02-13",
+            "title": "Чорна Пантера",
+            "video": false,
+            "vote_average": 7.4,
+            "vote_count": 20244
+    },
+])
 
-// console.log(test)
+console.log(test)
 
 
