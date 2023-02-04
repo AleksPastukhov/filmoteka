@@ -1,21 +1,21 @@
-const getFilmCardInnerHTMLString = ({ release_date, title }) => {
+const getFilmCardInnerHTMLString = ({ poster_path, release_date, title,genre_ids, id,vote_average }) => {
     
     const formatted_release_date = new Date(release_date).getFullYear();
 
     return `
         <div class="film-card">
             <img
-                src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Greyhound_nor1-tb.jpg"
-                alt="${'123'}"
+                src="${poster_path}"
+                alt="${title}"
                 loading="lazy"
                 class="film-card__photo"
             />
 
             <div class="info">
                 <p class="info__title">${title}</p>
-                <p class="info__genres">${'123'}</p>
+                <p class="info__genres">${genre_ids}</p>
                 <p class="info__year">${formatted_release_date}</p>
-                <p class="info__raiting">${'123'}</p>
+                <p class="info__raiting">${vote_average}</p>
             </div>
         </div>
 `
