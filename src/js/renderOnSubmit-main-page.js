@@ -8,10 +8,6 @@ const form = document.querySelector('.form__input');
 
 form.addEventListener('submit', getFilmsOnSubmit);
 
-getGenres()
-  .then(result => console.log(result))
-  .catch(err => console.log(err));
-
 function getFilmsOnSubmit(evt) {
   evt.preventDefault();
 

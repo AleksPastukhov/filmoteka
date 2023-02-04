@@ -1,6 +1,11 @@
 import { genresInfo } from './genres-info';
 import { getGenresNames } from './getGenreNames';
 import ComingSoonImg from '../images/movie-poster-coming-soon.jpg';
+import { getDataFromLocalStorage } from './local-storage-info';
+import { DATA_STORAGE, getGenres } from './genres';
+
+const data = getDataFromLocalStorage(DATA_STORAGE);
+console.log(data);
 
 const list = document.querySelector('.cards__list');
 
