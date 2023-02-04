@@ -10,7 +10,8 @@ const saveDataToLocalStorage = (key, value) => {
 const getDataFromLocalStorage = key => {
   try {
     const data = localStorage.getItem(key);
-    return result === null ? undefined : JSON.parse(data);
+    const result = null ? undefined : JSON.parse(data);
+    return result;
   } catch (error) {
     console.log('Error: ', error.message);
   }

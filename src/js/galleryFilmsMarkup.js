@@ -1,6 +1,12 @@
 import { genresInfo } from './genres-info';
 import { getGenresNames } from './getGenreNames';
 import ComingSoonImg from '../images/movie-poster-coming-soon.jpg';
+import { getDataFromLocalStorage } from './local-storage-info';
+import { DATA_STORAGE } from './genres';
+import { getGenresFromId } from './getGenresFromId';
+
+const genresData = getDataFromLocalStorage(DATA_STORAGE);
+console.log(genresData);
 
 const list = document.querySelector('.cards__list');
 
@@ -27,14 +33,14 @@ src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
       <li class="library__description">
         <p class="library__genres">${
           genreIds.length === 0
-            ? 'NO GENRES'
-            : getGenresNames(genreIds, genresInfo)
-        }</p>
+            ? 'No genre'
+            : getGenresFromId(genreIds, genresData)
+        } |</p>
       </li>
       <li class="library__description">
         <p class="library__year">${
           release_date === '' || !release_date
-            ? 'NO DATE'
+            ? 'No date'
             : release_date.slice(0, 4)
         }</p>
       </li>
