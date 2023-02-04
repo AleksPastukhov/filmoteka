@@ -1,5 +1,7 @@
 // import * as myModule from './js';
 import './js/typed';
+import './js/loader';
+import './js/local-storage-info';
 
 // import FilmsApiService from './js/films-service';
 

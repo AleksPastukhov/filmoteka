@@ -2,15 +2,15 @@
 // preloader
 document.body.onload = function () {
   setTimeout(() => {
-    const preloader = document.getElementById('preloader');
-    if (!preloader.classList.contains('done')) {
+    const preloader = document.querySelector('.preloader');
+    if (preloader !== null && !preloader.classList.contains('done')) {
       preloader.classList.add('done');
     }
   }, 1000);
 };
 
 // spinner
-class Spinner {
+export class Spinner {
   constructor(selector) {
     this.spinner = document.querySelector(selector);
   }
