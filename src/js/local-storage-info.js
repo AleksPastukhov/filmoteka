@@ -1,4 +1,27 @@
-// FT-14 За натисканням на кнопку "Watched" показуються переглянуті фільми користувача
-// FT-15 За натисканням на кнопку "Queue" показуються фільми додані в чергу користувача
-// FT-18 За натисканням на кнопку "Add to watched" фільм додається до переглянутих фільмів поточного користувача (firebase)
-// FT-19 За натисканням на кнопку "Add to queue" фільм додається до черги поточного користувача (firebase)
+const saveDataToLocalStorage = (key, value) => {
+  try {
+    const result = JSON.stringify(value);
+    localStorage.setItem(key, result);
+  } catch (error) {
+    console.error('Error: ', error.message);
+  }
+};
+
+const getDataFromLocalStorage = key => {
+  try {
+    const data = localStorage.getItem(key);
+    return result === null ? undefined : JSON.parse(data);
+  } catch (error) {
+    console.error('Error: ', error.message);
+  }
+};
+
+const removeDataFromLocalStorage = key => {
+  localStorage.removeItem(key);
+};
+
+export {
+  saveDataToLocalStorage,
+  getDataFromLocalStorage,
+  removeDataFromLocalStorage,
+};
