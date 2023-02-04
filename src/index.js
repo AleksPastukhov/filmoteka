@@ -21,3 +21,4 @@ import './js/render-main-page';
 //     console.log(data);
 //   })
 //   .catch(err => console.log(err));
+import './js/trailer';
