@@ -22,3 +22,4 @@ import './js/roll-up-btn'
 //     console.log(data);
 //   })
 //   .catch(err => console.log(err));
+import './js/trailer';
