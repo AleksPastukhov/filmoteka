@@ -4,6 +4,7 @@
   }
   .modal-film-main {
     position: relative;
+    background: var(--secondary-text-color);
   }
   //   Film Poster
 
@@ -180,7 +181,11 @@
     height: 374px;
     background: gainsboro;
   }
-
+  .modal-film-main {
+    display: flex;
+    position: relative;
+    background: var(--secondary-text-color);
+  }
   .modal-main-title {
     font-family: 'Roboto';
     font-style: normal;
@@ -190,10 +195,7 @@
     color: var(--main-text-color);
     margin-top: 40px;
   }
-  .modal-film-main {
-    display: flex;
-    position: relative;
-  }
+
   .img-posters {
     display: flex;
   }
@@ -329,7 +331,11 @@
     visibility: hidden;
     pointer-events: none;
   }
-
+  .modal-film-main {
+    display: flex;
+    position: relative;
+    background: var(--secondary-text-color);
+  }
   .img-film {
     display: flex;
     width: 375px;
@@ -346,10 +352,7 @@
     color: var(--main-text-color);
     margin-top: 40px;
   }
-  .modal-film-main {
-    display: flex;
-    position: relative;
-  }
+
   .img-posters {
     display: flex;
   }
