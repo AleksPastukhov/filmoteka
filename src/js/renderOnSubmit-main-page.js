@@ -16,7 +16,6 @@ form.addEventListener('submit', getFilmsOnSubmit);
 
 function getFilmsOnSubmit(evt) {
   evt.preventDefault();
-  spinner.addSpinner();
 
   let page = 1;
   const inputValue = evt.currentTarget.searchQuery.value;
@@ -36,6 +35,8 @@ function getFilmsOnSubmit(evt) {
 
         return;
       }
+      spinner.addSpinner();
+
       renderFilmsToGallery(films.results);
       spinner.removeSpinner();
 
