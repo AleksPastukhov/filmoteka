@@ -494,7 +494,7 @@
     transform: rotate(-90deg);
   }
 }
-// Кнопка трейлеру
+// Трейлер
 .img-posters {
   position: relative;
   transition: 0.4s;
@@ -525,6 +525,25 @@
   color: currentColor;
 }
 .trailer-iframe {
-  width: 75%;
+  width: 75vw;
+  max-height: 75vh;
   aspect-ratio: 16 / 9;
+}
+.trailer-btn-close {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+.trailer-btn-close > i {
+  color: #f79c78;
+  font-size: 30px;
+  transition: 0.4s;
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
