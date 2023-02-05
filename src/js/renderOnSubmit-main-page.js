@@ -1,6 +1,9 @@
 import FilmsApiService from './films-service';
 import { renderFilmsToGallery } from './galleryFilmsMarkup';
 import Pagination from 'tui-pagination';
+import { Spinner } from './loader';
+
+const spinner = new Spinner('.spinner');
 
 const paginationContainer = document.querySelector('#pagination');
 
@@ -13,6 +16,8 @@ form.addEventListener('submit', getFilmsOnSubmit);
 
 function getFilmsOnSubmit(evt) {
   evt.preventDefault();
+  spinner.addSpinner();
+
   let page = 1;
   const inputValue = evt.currentTarget.searchQuery.value;
   console.log(inputValue);
@@ -32,6 +37,7 @@ function getFilmsOnSubmit(evt) {
         return;
       }
       renderFilmsToGallery(films.results);
+      spinner.removeSpinner();
 
       const pagination = new Pagination(paginationContainer, {
         totalItems: `${films.total_results}`,
@@ -42,6 +48,8 @@ function getFilmsOnSubmit(evt) {
 
       pagination.reset(films.total_results);
       pagination.on('beforeMove', e => {
+        spinner.addSpinner();
+
         page = e.page;
         filmsApiService.getFilms('search', page, inputValue).then(films => {
           if (!films.results) {
@@ -50,12 +58,12 @@ function getFilmsOnSubmit(evt) {
 
           renderFilmsToGallery(films.results);
 
-          setTimeout(() => {
-            window.scrollTo({
-              behavior: 'smooth',
-              top: 250,
-            });
-          }, 300);
+          window.scrollTo({
+            behavior: 'smooth',
+            top: 0,
+          });
+
+          spinner.removeSpinner();
         });
       });
     })
