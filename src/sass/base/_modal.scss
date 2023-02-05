@@ -361,10 +361,6 @@
 // FOR DASKTOP
 
 @media screen and (min-width: 1280px) {
-  .container {
-    width: 100%;
-  }
-
   .backdrop {
     position: fixed;
     z-index: 100;
@@ -384,7 +380,18 @@
     display: flex;
     position: relative;
     background: var(--secondary-text-color);
+    width: 806px;
+    height: 560px;
   }
+
+  // POSTER
+
+  .img-posters {
+    margin-left: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .img-film {
     display: flex;
     width: 375px;
@@ -409,7 +416,13 @@
   .film-commercial {
     display: flex;
     flex-direction: column;
-    margin-left: 68px;
+    margin-left: 16px;
+    margin-right: 12px;
+  }
+  // RATING TABLE
+  .tr,
+  td {
+    padding-bottom: 8px;
   }
 
   .level-intarest__name {
@@ -443,6 +456,8 @@
     line-height: 1.3;
     text-transform: uppercase;
     color: var(--main-text-color);
+    margin-top: 12px;
+    margin-bottom: 8px;
   }
 
   //   ОПИС ФІЛЬМУ
@@ -454,13 +469,14 @@
     font-size: 12px;
     line-height: 1.7;
     color: var(--main-text-color);
+    text-align: justify;
   }
 
   // Кнопки добавлення та видилення фільму
 
   .modal-Btm {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     width: 100%;
     margin-top: 20px;
   }
@@ -472,20 +488,21 @@
     font-size: 12px;
     line-height: 1.3;
 
-    display: flex;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
     color: var(--main-text-color);
+    border: 1px solid var(--main-text-color);
     border-radius: 5px;
 
     padding-top: 14px;
     padding-bottom: 12px;
-    padding-left: 9px;
-    padding-right: 9px;
-    width: 125px;
+    // padding-left: 10px;
+    // padding-right: 10px;
+    width: 136px;
 
-    margin-right: 20px;
+    margin-right: 15px;
+    margin-left: 12px;
   }
 
   .addQueueBtm {
@@ -502,7 +519,7 @@
     color: var(--main-text-color);
 
     padding: 13px;
-    width: 125px;
+    width: 136px;
 
     border: 1px solid var(--main-text-color);
     border-radius: 5px;
