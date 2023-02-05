@@ -13,6 +13,11 @@ import FilmsApiService from './films-service';
 import { renderFilmsToGallery } from './galleryFilmsMarkup';
 import { saveGenresToLocalStorage } from './genres';
 import { Spinner } from './loader';
+import { saveDataToLocalStorage } from './local-storage-info';
+
+const FILMS_DATA = 'films-data';
+export { FILMS_DATA };
+
 const spinner = new Spinner('.spinner');
 
 const paginationContainer = document.querySelector('#pagination');
@@ -27,6 +32,7 @@ async function onFirstLoad() {
       if (!data.results) {
         return;
       }
+      saveDataToLocalStorage(FILMS_DATA, data.results);
 
       renderFilmsToGallery(data.results);
 
@@ -46,6 +52,7 @@ async function onFirstLoad() {
           if (!data.results) {
             return;
           }
+          saveDataToLocalStorage(FILMS_DATA, data.results);
 
           renderFilmsToGallery(data.results);
 

@@ -2,6 +2,8 @@ import FilmsApiService from './films-service';
 import { renderFilmsToGallery } from './galleryFilmsMarkup';
 import Pagination from 'tui-pagination';
 import { Spinner } from './loader';
+import { saveDataToLocalStorage } from './local-storage-info';
+import { FILMS_DATA } from './render-main-page';
 
 const spinner = new Spinner('.spinner');
 
@@ -35,6 +37,7 @@ function getFilmsOnSubmit(evt) {
 
         return;
       }
+      saveDataToLocalStorage(FILMS_DATA, films.results);
       spinner.addSpinner();
 
       renderFilmsToGallery(films.results);
@@ -58,6 +61,8 @@ function getFilmsOnSubmit(evt) {
           }
 
           renderFilmsToGallery(films.results);
+
+          saveDataToLocalStorage(FILMS_DATA, films.results);
 
           window.scrollTo({
             behavior: 'smooth',
