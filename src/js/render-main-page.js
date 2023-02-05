@@ -12,6 +12,8 @@ import Pagination from 'tui-pagination';
 import FilmsApiService from './films-service';
 import { renderFilmsToGallery } from './galleryFilmsMarkup';
 import { saveGenresToLocalStorage } from './genres';
+import { Spinner } from './loader';
+const spinner = new Spinner('.spinner');
 
 const paginationContainer = document.querySelector('#pagination');
 const filmsApiService = new FilmsApiService();
@@ -37,6 +39,8 @@ async function onFirstLoad() {
 
       pagination.reset(data.total_results);
       pagination.on('beforeMove', e => {
+        spinner.addSpinner();
+
         let page = e.page;
         filmsApiService.getFilms('trends', page).then(data => {
           if (!data.results) {
@@ -45,16 +49,16 @@ async function onFirstLoad() {
 
           renderFilmsToGallery(data.results);
 
-          setTimeout(() => {
-            window.scrollTo({
-              behavior: 'smooth',
-              top: 250,
-            });
-          }, 300);
+          window.scrollTo({
+            behavior: 'smooth',
+            top: 0,
+          });
+          spinner.removeSpinner();
         });
       });
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log(err))
+    .finally();
 }
 
 onFirstLoad();
