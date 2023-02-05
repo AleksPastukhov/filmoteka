@@ -26,7 +26,6 @@
 //     console.log(refs.modal.classList);
 //   }
 // }
-
 const refs = {
   filmGalaryContainer: document.querySelector('.home'),
   closeModalBtn: document.querySelector('.modal-close'),
@@ -57,12 +56,49 @@ function onFilmCardClick(evt) {
   }
 
   refs.modal.classList.remove('visually-hidden');
+  onMovieCardClick()
 }
 
 function onCloseBtnClick() {
   refs.modal.classList.add('visually-hidden');
 }
+const filmGalaryContainer = document.querySelector('.home');
 
+filmGalaryContainer.addEventListener('click', onMovieCardClick);
+
+ function onMovieCardClick(evt) {
+  // evt.preventDefault();
+  // console.log(evt.target.classList);
+
+  // if (
+  //   !evt.target.classList.contains('cards__text') &&
+  //   !evt.target.classList.contains('cards__thumb') &&
+  //   !evt.target.classList.contains('cards__link') &&
+  //   !evt.target.classList.contains('cards__item')
+  // ) {
+  //   console.log('клік не на картку');
+  //   return;
+  // }
+
+ 
+  window.addEventListener('keydown', onKeyEscpPress);
+
+  function onKeyEscpPress(evt) {
+    if (evt.code !== 'Escape') {
+      return;
+    }
+  
+    onCloseBtnClick();
+    window.removeEventListener('keydown', onKeyEscpPress);
+  }
+  refs.modal.addEventListener('click', onBackdropClick);
+  function onBackdropClick(evt) {
+    if (evt.currentTarget === evt.target) {
+ 
+    onCloseBtnClick();
+    }
+  }
+}
 // fetch(
 //   'https://api.themoviedb.org/3/trending/movie/day?api_key=008ad61af513926e956f6d36edd6996c'
 // )
