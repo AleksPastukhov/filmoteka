@@ -57,10 +57,12 @@ function onFilmCardClick(evt) {
   }
 
   refs.modal.classList.remove('visually-hidden');
+  document.body.style.overflow = 'hidden';
 }
 
 function onCloseBtnClick() {
   refs.modal.classList.add('visually-hidden');
+  document.body.style.overflow = 'auto';
 }
 
 // fetch(
