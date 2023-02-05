@@ -2,11 +2,13 @@ import * as basicLightbox from 'basiclightbox';
 import 'remixicon/fonts/remixicon.css';
 import FilmsApiService from './films-service';
 
-const filmServise = new FilmsApiService();
-const trailerBtn = document.querySelector('.trailer-btn');
-const filmId = trailerBtn.dataset.id;
+// const filmServise = new FilmsApiService();
 
-trailerBtn.addEventListener('click', onTrailerBtn);
+// const trailerBtn = document.querySelector('.trailer-btn');
+
+// const filmId = trailerBtn.getAttribute('data-id');
+
+// trailerBtn.addEventListener('click', onYoutubeBtn);
 
 function onTrailerBtn() {
   filmServise.getFilmById('video', filmId).then(({ results }) => {
