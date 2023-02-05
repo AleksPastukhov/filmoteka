@@ -68,4 +68,6 @@ async function onFirstLoad() {
     .finally();
 }
 
-onFirstLoad();
+setTimeout(() => {
+  onFirstLoad();
+}, 0);
