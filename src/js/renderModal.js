@@ -28,6 +28,7 @@ function onRenderModal(e) {
   refs.modal.classList.remove('visually-hidden');
 
   const currentFilmCard = e.target.closest('li');
+
   const filmId = currentFilmCard.getAttribute('id');
 
   console.log(filmId);

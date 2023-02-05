@@ -22,6 +22,7 @@ function getFilmsOnSubmit(evt) {
   let page = 1;
   const inputValue = evt.currentTarget.searchQuery.value;
   console.log(inputValue);
+  spinner.addSpinner();
 
   filmsApiService
     .getFilms('search', page, inputValue)
@@ -38,7 +39,6 @@ function getFilmsOnSubmit(evt) {
         return;
       }
       saveDataToLocalStorage(FILMS_DATA, films.results);
-      spinner.addSpinner();
 
       renderFilmsToGallery(films.results);
       spinner.removeSpinner();
