@@ -7,3 +7,4 @@ import './js/roll-up-btn';
 import './js/open-close-modal';
 import './js/trailer';
 import './js/modal';
+import './js/renderModal';
