@@ -4,12 +4,13 @@ import * as basicLightbox from 'basiclightbox';
 // JS
 import FilmsApiService from './films-service';
 
-const filmServise = new FilmsApiService();
+// const filmServise = new FilmsApiService();
 
-const trailerBtn = document.querySelector('.trailer-btn');
-const filmId = trailerBtn.dataset.id;
+// const trailerBtn = document.querySelector('.trailer-btn');
 
-trailerBtn.addEventListener('click', onYoutubeBtn);
+// const filmId = trailerBtn.getAttribute('data-id');
+
+// trailerBtn.addEventListener('click', onYoutubeBtn);
 
 function onYoutubeBtn() {
   filmServise.getFilmById('video', filmId).then(({ results }) => {
