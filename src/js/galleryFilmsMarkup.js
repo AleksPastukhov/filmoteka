@@ -21,7 +21,7 @@ export function renderFilmsToGallery(filmsArray) {
         const basePosterURL = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
         return `<li class="library__item" data-id="${id}>
-        return `<li class="library__item" id="${id}">
+        
         <a href="" class="library__link"><div class="library__thumb">
       <img class="library__image" 
 src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
