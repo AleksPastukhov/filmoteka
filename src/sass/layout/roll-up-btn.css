@@ -2,8 +2,7 @@
   position: fixed;
   z-index: 9;
   fill: rgba(237, 24, 44, 0.3);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   right: 20px;
   bottom: 20px;
   border-radius: 50%;

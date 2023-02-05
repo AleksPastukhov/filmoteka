@@ -23,7 +23,7 @@ export function renderFilmsToGallery(filmsArray) {
         const basePosterURL = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
         return `<li class="library__item">
-    <div class="library__thumb">
+        <a href="" class="library__link"><div class="library__thumb">
       <img class="library__image" 
 src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
     </div>
@@ -48,7 +48,8 @@ src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
         <p class="library__rating">${vote_average.toFixed(1)}</p>
       </li>
     </ul>
-    </div>
+    </div></a>
+    
 </li>`;
       }
     )

@@ -56,17 +56,19 @@ function onFilmCardClick(evt) {
   }
 
   refs.modal.classList.remove('visually-hidden');
-  onMovieCardClick()
+  onMovieCardClick();
+  document.body.style.overflow = 'hidden';
 }
 
 function onCloseBtnClick() {
   refs.modal.classList.add('visually-hidden');
+  document.body.style.overflow = 'auto';
 }
 const filmGalaryContainer = document.querySelector('.home');
 
 filmGalaryContainer.addEventListener('click', onMovieCardClick);
 
- function onMovieCardClick(evt) {
+function onMovieCardClick(evt) {
   // evt.preventDefault();
   // console.log(evt.target.classList);
 
@@ -80,22 +82,20 @@ filmGalaryContainer.addEventListener('click', onMovieCardClick);
   //   return;
   // }
 
- 
   window.addEventListener('keydown', onKeyEscpPress);
 
   function onKeyEscpPress(evt) {
     if (evt.code !== 'Escape') {
       return;
     }
-  
+
     onCloseBtnClick();
     window.removeEventListener('keydown', onKeyEscpPress);
   }
   refs.modal.addEventListener('click', onBackdropClick);
   function onBackdropClick(evt) {
     if (evt.currentTarget === evt.target) {
- 
-    onCloseBtnClick();
+      onCloseBtnClick();
     }
   }
 }
