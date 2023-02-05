@@ -24,9 +24,10 @@ export function renderFilmsToGallery(filmsArray) {
 
         return `<li class="library__item">
     <div class="library__thumb">
-      <img class="img library__image" 
+      <img class="library__image" 
 src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
     </div>
+    <div class="library__paragraph">
     <h2 class="library__movie">${title}</h2>
     <ul class="library__info">
       <li class="library__description">
@@ -47,6 +48,7 @@ src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
         <p class="library__rating">${vote_average.toFixed(1)}</p>
       </li>
     </ul>
+    </div>
 </li>`;
       }
     )
