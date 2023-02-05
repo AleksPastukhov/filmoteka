@@ -10,20 +10,21 @@ refs.closeModalBtn.addEventListener('click', toggleModal);
 
 function toggleModal(evt) {
   console.log(evt.target.classList);
-  // refs.modal.classList.toggle('.visually-hidden');
   if (evt.target.classList.contains('library__image')) {
-    console.log('все пропало!');
+    console.log('Відкриття модалки');
     console.log(refs.modal.classList);
     refs.modal.classList.remove('visually-hidden');
   }
   if (evt.target.classList.contains('svg-close')) {
-    console.log('все не пропало!');
+    console.log('Закриття модалки');
     refs.modal.classList.add('visually-hidden');
     console.log(refs.modal.classList);
   }
-  // refs.modal.classList.add('.modal-open');
-
-  // refs.innerHTML = '';
+  if (evt.currentTarget.classList.contains('modal-close')) {
+    console.log('Закриття модалки');
+    refs.modal.classList.add('visually-hidden');
+    console.log(refs.modal.classList);
+  }
 }
 
 // fetch(
