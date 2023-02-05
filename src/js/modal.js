@@ -31,8 +31,10 @@ const refs = {
   filmGalaryContainer: document.querySelector('.home'),
   closeModalBtn: document.querySelector('.modal-close'),
   modal: document.querySelector('.backdrop'),
+  tab: document.querySelector('#tabindex'),
 };
 
+refs.tab.addEventListener('click', onFilmCardClick);
 refs.filmGalaryContainer.addEventListener('click', onFilmCardClick);
 refs.closeModalBtn.addEventListener('click', onCloseBtnClick);
 
@@ -62,6 +64,19 @@ function onFilmCardClick(evt) {
 function onCloseBtnClick() {
   refs.modal.classList.add('visually-hidden');
 }
+
+// Подія при натисканні клавіші Enter
+
+refs.tab.addEventListener('keyup', function (e) {
+  if (e.keyCode === 13) {
+    refs.filmGalaryContainer.addEventListener('click', onFilmCardClick).click();
+  }
+});
+
+refs.filmGalaryContainer.addEventListener('click', onFilmCardClick).onclick =
+  function () {
+    alert('Clicked!');
+  };
 
 // fetch(
 //   'https://api.themoviedb.org/3/trending/movie/day?api_key=008ad61af513926e956f6d36edd6996c'
