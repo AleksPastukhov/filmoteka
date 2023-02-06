@@ -1,3 +1,5 @@
+// FT-24 Реалізувати показ трейлеру фільма (мобілка, планшет, десктоп).
+
 import * as basicLightbox from 'basiclightbox';
 import 'remixicon/fonts/remixicon.css';
 import FilmsApiService from './films-service';

@@ -96,4 +96,3 @@ const test = renderFilmCards([
   },
 ]);
 
-console.log(test);

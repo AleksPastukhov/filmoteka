@@ -1,4 +1,3 @@
-// FT-21 Підключити/зверстати Loader (spinner) для асинхронних запитів
 // preloader
 document.body.onload = function () {
   setTimeout(() => {

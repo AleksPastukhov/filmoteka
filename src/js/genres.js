@@ -12,17 +12,17 @@ export function saveGenresToLocalStorage() {
     .then(result => {
       const genreById = result.map(genre => {
         const genreArr = Object.values(genre);
-        // console.log(genreArr);
+
         const genreId = genreArr[0];
-        // console.log(genreId);
+
         let genreObj = {
           [genreId]: genreArr[1],
         };
         return genreObj;
       });
-      // console.log(genreById);
+
       const allGenres = Object.assign({}, ...genreById);
-      // console.log(allGenres);
+
       saveDataToLocalStorage(DATA_STORAGE, allGenres);
     });
 }

@@ -7,7 +7,6 @@ const list = document.querySelector('.cards__list');
 
 export function renderFilmsToGallery(filmsArray) {
   const genresData = getDataFromLocalStorage(DATA_STORAGE);
-  // console.log(genresData);
   const markup = filmsArray
     .map(
       ({

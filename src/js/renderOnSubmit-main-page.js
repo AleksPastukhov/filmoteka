@@ -21,13 +21,13 @@ function getFilmsOnSubmit(evt) {
 
   let page = 1;
   const inputValue = evt.currentTarget.searchQuery.value;
-  console.log(inputValue);
+
   spinner.addSpinner();
 
   filmsApiService
     .getFilms('search', page, inputValue)
     .then(films => {
-      console.log(films.results);
+
       if (films.results.length === 0) {
         headerNotification.classList.remove('visually-hidden');
 
