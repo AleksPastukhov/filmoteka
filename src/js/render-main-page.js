@@ -1,13 +1,3 @@
-// FT-07 Реалізувати підвантаження популярних фільмів на головну (першу) сторінку
-
-// Посилання на документацію для запиту на список найпопулярніших фільмів на сьогодні для створення колекції на головній сторінці: https://developers.themoviedb.org/3/trending/get-trending
-//
-// Посилання на документацію для запиту фільму за ключовим словом на головній сторінці: https://developers.themoviedb.org/3/search/search-movies
-
-// - використовуючи клас FilmsApiService здійснюємо запит на бекенд в параметрах запиту передаємо typeRequest
-
-// - створюємо розмітку для головної сторінки
-// - рендеримо розмітку в контейнер (container-home) головної cторінки
 import Pagination from 'tui-pagination';
 import FilmsApiService from './films-service';
 import { renderFilmsToGallery } from './galleryFilmsMarkup';
@@ -68,4 +58,6 @@ async function onFirstLoad() {
     .finally();
 }
 
-onFirstLoad();
+setTimeout(() => {
+  onFirstLoad();
+}, 0);

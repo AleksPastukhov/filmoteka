@@ -5,4 +5,9 @@ const getGenresFromId = (genresIds, genresData) => {
     : genres.join(', ');
 };
 
-export { getGenresFromId };
+const getGenresFromIdModal = (genresIds, genresData) => {
+  const genres = genresIds.map(id => genresData[id]);
+  return genres.join(', ');
+};
+
+export { getGenresFromId, getGenresFromIdModal };

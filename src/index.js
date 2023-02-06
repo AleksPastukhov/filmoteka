@@ -1,4 +1,3 @@
-// import * as myModule from './js';
 import './js/typed';
 import './js/loader';
 import './js/local-storage-info';
@@ -24,3 +23,6 @@ import './js/modal-students';
 //   })
 //   .catch(err => console.log(err));
 import './js/trailer';
+import './js/modal';
+import './js/renderModal';
+import './js/modalBtnsAction';
