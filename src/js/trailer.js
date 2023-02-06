@@ -3,20 +3,21 @@
 import * as basicLightbox from 'basiclightbox';
 import 'remixicon/fonts/remixicon.css';
 import FilmsApiService from './films-service';
-
-// const filmServise = new FilmsApiService();
-
-// const trailerBtn = document.querySelector('.trailer-btn');
-
-// const filmId = trailerBtn.getAttribute('data-id');
-
-// trailerBtn.addEventListener('click', onYoutubeBtn);
+export { onTrailerBtn };
+const filmServise = new FilmsApiService();
 
 function onTrailerBtn() {
+  const trailerBtn = document.querySelector('.trailer-btn');
+  const filmId = trailerBtn.getAttribute('data-id');
   filmServise.getFilmById('video', filmId).then(({ results }) => {
+    if (results.length === 0) {
+      trailerBtn.classList.remove('trailer-btn');
+      trailerBtn.classList.add('trailer-false-request');
+      trailerBtn.innerHTML = `Oops... We missed the trailer :(`;
+    }
     const trailerKey = results[0].key;
 
-    const instance = basicLightbox.create(` 
+    const instance = basicLightbox.create(`
 <div class="trailer-wrapper">
 
   <button class="trailer-btn-close">
@@ -37,12 +38,12 @@ function onTrailerBtn() {
       instance.close();
     }
 
-    trailerBtn.addEventListener('keydown', onEscape);
-    function onEscape(evt) {
-      if (evt.code === 'Escape') {
-        instance.close();
-        trailerBtn.removeEventListener('keydown', onEscape);
-      }
-    }
+    // trailerBtn.addEventListener('keydown', onEscape);
+    // function onEscape(evt) {
+    //   if (evt.code === 'Escape') {
+    //     instance.close();
+    //     trailerBtn.removeEventListener('keydown', onEscape);
+    //   }
+    // }
   });
 }

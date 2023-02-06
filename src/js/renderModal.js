@@ -35,6 +35,9 @@ function onRenderModal(e) {
     <div class="img-posters">
       <img class="img-film container" 
       src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
+       <button class="trailer-btn" data-id="${id}">
+        <i class="ri-play-circle-line"></i>
+      </button>
     </div>
 
     <div class="film-commercial">

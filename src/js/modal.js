@@ -1,5 +1,5 @@
 import { onRenderModal } from './renderModal';
-
+import { onTrailerBtn } from './trailer';
 const refs = {
   filmGalaryContainer: document.querySelector('.home'),
   modal: document.querySelector('.backdrop'),
@@ -55,4 +55,9 @@ function onMovieCardClick(evt) {
       onCloseBtnClick();
     }
   }
+
+  // Трейлер
+  const trailerBtn = document.querySelector('.trailer-btn');
+  const filmId = trailerBtn.getAttribute('data-id');
+  trailerBtn.addEventListener('click', onTrailerBtn);
 }
