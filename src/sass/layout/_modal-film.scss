@@ -9,7 +9,7 @@
     width: 280px;
     height: 90vh;
     max-height: 850px;
-    overflow-y: scroll;
+    overflow-x: scroll;
     padding: 48px 20px 40px 20px;
   background-color: var(--secondary-text-color);
     opacity: 1;
@@ -237,8 +237,9 @@
     display: flex;
     width: 264px;
     height: 374px;
-    background: gainsboro;
     border-radius: 5px;
+
+    
   }
   // ТАБЛИЦЯ З РЕЙТІНГАМИ
 
@@ -422,7 +423,6 @@
     display: flex;
     width: 375px;
     height: 478px;
-    background: gainsboro;
     border-radius: 5px;
   }
 
