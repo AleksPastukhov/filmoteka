@@ -1,15 +1,15 @@
-@media screen and (min-width: 320px) {
-  .container {
-    width: 100%;
-  }
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .modal-film-main {
     position: relative;
     background: var(--secondary-text-color);
+    margin-top: 48px;
+    width: 280px;
   }
 
   .backdrop {
     position: fixed;
     overflow-y: hidden;
+    overflow: scroll;
     z-index: 100;
     width: 100%;
     height: 100%;
@@ -24,12 +24,16 @@
     pointer-events: none;
   }
   //   Film Poster
-
+  .img-posters {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 48px;
+  }
   .img-film {
     width: 240px;
     height: 357px;
     background: gainsboro;
-    margin-top: 48px;
+    border-radius: 5px;
   }
 
   .modal-main-title {
@@ -42,9 +46,12 @@
 
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   .shot-inform-film {
     margin-bottom: 20px;
+    padding-left: 20px;
   }
 
   .level-intarest__name {
@@ -69,6 +76,10 @@
     margin-bottom: 8px;
   }
 
+  .tr,
+  td {
+    padding-bottom: 8px;
+  }
   .reting-level {
     padding-left: 9px;
     padding-right: 9px;
@@ -78,7 +89,7 @@
     border-radius: 5px;
   }
 
-  .midl-table {
+  .midle-table {
     width: 40px;
   }
 
@@ -93,6 +104,7 @@
     text-transform: uppercase;
     color: var(--main-text-color);
     margin-bottom: 8px;
+    padding-left: 20px;
   }
 
   //   ОПИС ФІЛЬМУ
@@ -103,7 +115,11 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.7;
+    text-align: justify;
     color: var(--main-text-color);
+    margin-left: auto;
+    margin-right: auto;
+    width: 240px;
   }
 
   // Кнопки добавлення та видилення фільму
@@ -172,10 +188,7 @@
 
 // For Tablet
 
-@media screen and (min-width: 768px) {
-  .container {
-    width: 100%;
-  }
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .backdrop {
     position: fixed;
     z-index: 100;
@@ -191,18 +204,30 @@
     visibility: hidden;
     pointer-events: none;
   }
+  .modal-film-main {
+    display: flex;
+    position: relative;
+    background-color: var(--secondary-text-color);
+    width: 704px;
+  }
 
+  // POSTER
+
+  .img-posters {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 36px;
+    padding-bottom: 138px;
+  }
   .img-film {
     display: flex;
     width: 264px;
     height: 374px;
     background: gainsboro;
+    border-radius: 5px;
   }
-  .modal-film-main {
-    display: flex;
-    position: relative;
-    background: var(--secondary-text-color);
-  }
+  // ТАБЛИЦЯ З РЕЙТІНГАМИ
+
   .modal-main-title {
     font-family: 'Roboto';
     font-style: normal;
@@ -211,15 +236,14 @@
     line-height: 1.2;
     color: var(--main-text-color);
     margin-top: 40px;
+    margin-bottom: 20px;
   }
 
-  .img-posters {
-    display: flex;
-  }
   .film-commercial {
     display: flex;
     flex-direction: column;
     margin-left: 68px;
+    margin-right: 72px;
   }
 
   .level-intarest__name {
@@ -231,6 +255,7 @@
     color: var(--secondary-background-color);
     text-align: start;
   }
+
   .level-intarest__value {
     font-family: 'Roboto';
     font-style: normal;
@@ -240,6 +265,10 @@
     text-align: start;
     align-items: center;
     color: var(--main-text-color);
+  }
+  .tr,
+  td {
+    padding-bottom: 8px;
   }
 
   // Заголовок ABOUT
@@ -252,6 +281,8 @@
     line-height: 16px;
     text-transform: uppercase;
     color: var(--main-text-color);
+    margin-top: 20px;
+    margin-bottom: 8px;
   }
 
   //   ОПИС ФІЛЬМУ
@@ -263,6 +294,7 @@
     font-size: 12px;
     line-height: 1.7;
     color: var(--main-text-color);
+    text-align: justify;
   }
 
   // Кнопки добавлення та видилення фільму
@@ -286,6 +318,7 @@
     text-align: center;
     text-transform: uppercase;
     color: var(--main-text-color);
+    border: 1px solid var(--main-text-color);
     border-radius: 5px;
 
     padding-top: 14px;
@@ -294,7 +327,7 @@
     padding-right: 9px;
     width: 125px;
 
-    margin-right: 20px;
+    margin-right: 15px;
   }
 
   .addQueueBtm {
@@ -329,10 +362,6 @@
 // FOR DASKTOP
 
 @media screen and (min-width: 1280px) {
-  .container {
-    width: 100%;
-  }
-
   .backdrop {
     position: fixed;
     z-index: 100;
@@ -363,12 +392,24 @@
     display: flex;
     position: relative;
     background: var(--secondary-text-color);
+    width: 806px;
+    height: 560px;
   }
+
+  // POSTER
+
+  .img-posters {
+    margin-left: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .img-film {
     display: flex;
     width: 375px;
     height: 478px;
     background: gainsboro;
+    border-radius: 5px;
   }
 
   .modal-main-title {
@@ -387,7 +428,13 @@
   .film-commercial {
     display: flex;
     flex-direction: column;
-    margin-left: 68px;
+    margin-left: 16px;
+    margin-right: 12px;
+  }
+  // RATING TABLE
+  .tr,
+  td {
+    padding-bottom: 8px;
   }
 
   .level-intarest__name {
@@ -421,6 +468,8 @@
     line-height: 1.3;
     text-transform: uppercase;
     color: var(--main-text-color);
+    margin-top: 12px;
+    margin-bottom: 8px;
   }
 
   //   ОПИС ФІЛЬМУ
@@ -432,13 +481,14 @@
     font-size: 12px;
     line-height: 1.7;
     color: var(--main-text-color);
+    text-align: justify;
   }
 
   // Кнопки добавлення та видилення фільму
 
   .modal-Btm {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     width: 100%;
     margin-top: 20px;
   }
@@ -450,20 +500,21 @@
     font-size: 12px;
     line-height: 1.3;
 
-    display: flex;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
     color: var(--main-text-color);
+    border: 1px solid var(--main-text-color);
     border-radius: 5px;
 
     padding-top: 14px;
     padding-bottom: 12px;
-    padding-left: 9px;
-    padding-right: 9px;
-    width: 125px;
+    // padding-left: 10px;
+    // padding-right: 10px;
+    width: 136px;
 
-    margin-right: 20px;
+    margin-right: 15px;
+    margin-left: 12px;
   }
 
   .addQueueBtm {
@@ -480,7 +531,7 @@
     color: var(--main-text-color);
 
     padding: 13px;
-    width: 125px;
+    width: 136px;
 
     border: 1px solid var(--main-text-color);
     border-radius: 5px;
