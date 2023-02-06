@@ -83,7 +83,7 @@ function onRenderModal(e) {
     </div>
     <button type="button" class="modal-close">
     <svg class="svg-close" width="14" height="14">
-      <use href="./images/icons.svg#close"></use>
+      <use href="/icons.adfc4680.svg#close"></use>
     </svg>
   </button>`;
 

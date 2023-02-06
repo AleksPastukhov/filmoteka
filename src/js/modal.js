@@ -1,14 +1,11 @@
-
 import { onRenderModal } from './renderModal';
 
 const refs = {
   filmGalaryContainer: document.querySelector('.home'),
-  closeModalBtn: document.querySelector('.modal-close'),
   modal: document.querySelector('.backdrop'),
 };
 
 refs.filmGalaryContainer.addEventListener('click', onFilmCardClick);
-refs.closeModalBtn.addEventListener('click', onCloseBtnClick);
 
 function onFilmCardClick(evt) {
   evt.preventDefault();
@@ -29,6 +26,8 @@ function onFilmCardClick(evt) {
     return;
   }
   onRenderModal(evt);
+  const closeModalBtn = document.querySelector('.modal-close');
+  closeModalBtn.addEventListener('click', onCloseBtnClick);
   refs.modal.classList.remove('visually-hidden');
   onMovieCardClick();
   document.body.style.overflow = 'hidden';
