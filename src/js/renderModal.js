@@ -1,7 +1,7 @@
 import { FILMS_DATA } from './render-main-page';
 import { getDataFromLocalStorage } from './local-storage-info';
 import ComingSoonImg from '../images/movie-poster-coming-soon.jpg';
-import { getGenresFromId } from './getGenresFromId';
+import { getGenresFromIdModal } from './getGenresFromId';
 import { getDataFromLocalStorage } from './local-storage-info';
 import { DATA_STORAGE } from './genres';
 
@@ -88,7 +88,7 @@ function onRenderModal(e) {
             <td class="level-intarest__value">${
               genreIds.length === 0
                 ? 'No genre'
-                : getGenresFromId(genreIds, genresData)
+                : getGenresFromIdModal(genreIds, genresData)
             }</td>
           </tr>
         </tbody>
