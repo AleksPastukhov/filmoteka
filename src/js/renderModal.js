@@ -4,6 +4,8 @@ import ComingSoonImg from '../images/movie-poster-coming-soon.jpg';
 import { getGenresFromIdModal } from './getGenresFromId';
 import { getDataFromLocalStorage } from './local-storage-info';
 import { DATA_STORAGE } from './genres';
+import svg from '../images/icons.svg';
+
 export { onRenderModal };
 
 const genresData = getDataFromLocalStorage(DATA_STORAGE);
@@ -83,7 +85,7 @@ function onRenderModal(e) {
     </div>
     <button type="button" class="modal-close">
     <svg class="svg-close" width="14" height="14">
-      <use href="/icons.adfc4680.svg#close"></use>
+      <use href="${svg}#close"></use>
     </svg>
   </button>`;
 
