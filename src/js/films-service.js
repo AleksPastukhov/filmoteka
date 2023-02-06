@@ -24,11 +24,11 @@ export default class FilmsApiService {
     return `${this.#BASE_URL}${this.#typeRequest[type]}?api_key=${this.#KEY}`;
   }
 
-  async getFilms(type, query) {
+  async getFilms(type, page = 1, query) {
     try {
       const options = {
         params: {
-          page: this.page,
+          page: page,
           query: query,
           language: 'en-US',
           include_adult: false,

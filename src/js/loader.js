@@ -6,7 +6,7 @@ document.body.onload = function () {
     if (preloader !== null && !preloader.classList.contains('done')) {
       preloader.classList.add('done');
     }
-  }, 1000);
+  }, 200);
 };
 
 // spinner

@@ -1,31 +1,77 @@
 import FilmsApiService from './films-service';
-import getGenres from './genres';
 import { renderFilmsToGallery } from './galleryFilmsMarkup';
+import Pagination from 'tui-pagination';
+import { Spinner } from './loader';
+import { saveDataToLocalStorage } from './local-storage-info';
+import { FILMS_DATA } from './render-main-page';
+
+const spinner = new Spinner('.spinner');
+
+const paginationContainer = document.querySelector('#pagination');
 
 const filmsApiService = new FilmsApiService();
 
 const form = document.querySelector('.form__input');
+const headerNotification = document.querySelector('.search__error-text');
 
 form.addEventListener('submit', getFilmsOnSubmit);
-
-getGenres()
-  .then(result => console.log(result))
-  .catch(err => console.log(err));
 
 function getFilmsOnSubmit(evt) {
   evt.preventDefault();
 
+  let page = 1;
   const inputValue = evt.currentTarget.searchQuery.value;
   console.log(inputValue);
+  spinner.addSpinner();
 
   filmsApiService
-    .getFilms('search', inputValue)
+    .getFilms('search', page, inputValue)
     .then(films => {
       console.log(films.results);
       if (films.results.length === 0) {
-        console.log('NO FILMS');
+        headerNotification.classList.remove('visually-hidden');
+
+        setTimeout(
+          () => headerNotification.classList.add('visually-hidden'),
+          4500
+        );
+
+        return;
       }
+      saveDataToLocalStorage(FILMS_DATA, films.results);
+
       renderFilmsToGallery(films.results);
+      spinner.removeSpinner();
+
+      const pagination = new Pagination(paginationContainer, {
+        totalItems: `${films.total_results}`,
+        itemsPerPage: 20,
+        visiblePages: 5,
+        centerAlign: true,
+      });
+
+      pagination.reset(films.total_results);
+      pagination.on('beforeMove', e => {
+        spinner.addSpinner();
+
+        page = e.page;
+        filmsApiService.getFilms('search', page, inputValue).then(films => {
+          if (!films.results) {
+            return;
+          }
+
+          renderFilmsToGallery(films.results);
+
+          saveDataToLocalStorage(FILMS_DATA, films.results);
+
+          window.scrollTo({
+            behavior: 'smooth',
+            top: 0,
+          });
+
+          spinner.removeSpinner();
+        });
+      });
     })
     .catch(err => console.log(err))
     .finally(form.reset());
