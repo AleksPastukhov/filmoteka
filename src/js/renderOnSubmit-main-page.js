@@ -27,15 +27,13 @@ function getFilmsOnSubmit(evt) {
   filmsApiService
     .getFilms('search', page, inputValue)
     .then(films => {
-
       if (films.results.length === 0) {
         headerNotification.classList.remove('visually-hidden');
 
-        setTimeout(
-          () => headerNotification.classList.add('visually-hidden'),
-          4500
-        );
-
+        setTimeout(() => {
+          headerNotification.classList.add('visually-hidden');
+        }, 4500);
+        spinner.removeSpinner();
         return;
       }
       saveDataToLocalStorage(FILMS_DATA, films.results);
