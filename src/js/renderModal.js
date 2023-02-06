@@ -10,6 +10,7 @@ const genresData = getDataFromLocalStorage(DATA_STORAGE);
 const modalCont = document.querySelector('.modal-film-main');
 
 function onRenderModal(e) {
+  // modalCont.innerHTML = '';
   const films = getDataFromLocalStorage(FILMS_DATA);
   const currentFilmCard = e.target.closest('li');
   const filmId = currentFilmCard.getAttribute('id');
@@ -69,7 +70,7 @@ function onRenderModal(e) {
       </table>
       <p class="comment-title">About</p>
       <p class="about-film">
-       ${overview}
+       ${overview === '' || !overview ? 'No description...' : overview}
       </p>
       <ul class="modal-Btm">
         <li>
@@ -79,7 +80,16 @@ function onRenderModal(e) {
           <button class="addQueueBtm" type="button">add to queue</button>
         </li>
       </ul>
-    </div>`;
+    </div>
+    <button type="button" class="modal-close">
+    <svg class="svg-close" width="14" height="14">
+      <use href="./images/icons.svg#close"></use>
+    </svg>
+  </button>`;
 
   modalCont.innerHTML = modalMarkup;
 }
+
+// <button class="svg-close">
+//   <i class="ri-close-circle-line"></i>
+// </button>;
