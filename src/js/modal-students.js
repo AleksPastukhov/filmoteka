@@ -15,7 +15,7 @@ const dev = [
     ml: `#`,
     tg: `#`,
     ln: `#`,
-    git: `#`,
+    git: `# `,
   },
   {
     name: `Anastasia Knihnitska`,
