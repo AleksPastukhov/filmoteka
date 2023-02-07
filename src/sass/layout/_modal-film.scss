@@ -217,11 +217,18 @@
     border-radius: 5px;
   }
   .svg-close {
+    top: 8px;
+    right: 8px;
     position: absolute;
-    right: 16px;
-    top: 16px;
-    // border: 2px solid #000000;
-    transform: rotate(-90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    &:hover {
+      fill:var(--accent-color);
+    }
   }
 }
 
@@ -419,11 +426,18 @@
   }
 
   .svg-close {
+    top: 8px;
+    right: 8px;
     position: absolute;
-    right: 16px;
-    top: 16px;
-    // border: 2px solid #000000;
-    transform: rotate(-90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    &:hover {
+      fill:var(--accent-color);
+    }
   }
 }
 
@@ -625,11 +639,18 @@
   }
 
   .svg-close {
+    top: 8px;
+    right: 8px;
     position: absolute;
-    right: 16px;
-    top: 16px;
-    // border: 2px solid #000000;
-    transform: rotate(-90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    &:hover {
+      fill:var(--accent-color);
+    }
   }
 }
 // Трейлер
