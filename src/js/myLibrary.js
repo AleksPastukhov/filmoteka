@@ -72,7 +72,7 @@ export function libraryHandler() {
       if (savedMovies) {
         refs.emptyLibrary.classList.add('visually-hidden');
         refs.paginationContainer.classList.remove('visually-hidden');
-//         addPagination();
+        addPagination();
         // renderSavedMovies(savedMovies);
       }
       if (savedMovies.length === 0) {
