@@ -154,6 +154,8 @@ function openModal() {
 }
 function closeModal() {
   refs.modal.classList.add('visually-hidden');
+  refs.btnLeft.classList.add('visually-hidden');
+  refs.btnRight.classList.remove('visually-hidden');
   index = 0;
 }
 
