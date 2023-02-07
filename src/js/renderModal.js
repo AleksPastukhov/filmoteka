@@ -5,6 +5,12 @@ import { getGenresFromIdModal } from './getGenresFromId';
 import { getDataFromLocalStorage } from './local-storage-info';
 import { DATA_STORAGE } from './genres';
 import svg from '../images/icons.svg';
+import {
+  getDataFromLocalStorage,
+  saveDataToLocalStorage,
+  removeDataFromLocalStorage,
+} from './local-storage-info';
+import { saveMovieToLibrary } from './modalBtnsAction';
 
 export { onRenderModal };
 
@@ -18,6 +24,8 @@ function onRenderModal(e) {
   const filmId = currentFilmCard.getAttribute('id');
   const neededFilmArr = films.filter(film => film.id === Number(filmId));
   const neededFilm = neededFilmArr[0];
+  removeDataFromLocalStorage('currentMovie');
+  saveDataToLocalStorage('currentMovie', neededFilm);
   const {
     poster_path,
     vote_count,
@@ -79,10 +87,10 @@ function onRenderModal(e) {
       </p>
       <ul class="modal-Btm">
         <li>
-          <button class="addWatchmBtm" type="button">add to Watched</button>
+        <button class="addWatchmBtm" type="button" data-action="add">add to watched</button>
         </li>
         <li>
-          <button class="addQueueBtm" type="button">add to queue</button>
+          <button class="addQueueBtm" type="button" data-action="add">add to queue</button>
         </li>
       </ul>
     </div>
@@ -93,6 +101,7 @@ function onRenderModal(e) {
   </button>`;
 
   modalCont.innerHTML = modalMarkup;
+  saveMovieToLibrary(getDataFromLocalStorage('currentMovie'));
 }
 
 // <button class="svg-close">
