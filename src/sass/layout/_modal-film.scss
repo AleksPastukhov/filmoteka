@@ -473,6 +473,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.5);
   }
   .modal-film-main {
     display: flex;
