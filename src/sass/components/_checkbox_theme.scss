@@ -8,6 +8,16 @@
   color: var(--secondary-text-color);
 }
 
+.footer-dark {
+  background-color: rgb(29, 33, 37);
+  color: rgb(114, 114, 114);
+}
+
+.footer-light {
+  background-color: var(--background-color);
+  color: #545454;
+}
+
 .toolbar {
   position: absolute;
   top: 0;
