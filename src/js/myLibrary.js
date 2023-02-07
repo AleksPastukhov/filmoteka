@@ -72,7 +72,7 @@ export function libraryHandler() {
       if (savedMovies) {
         refs.emptyLibrary.classList.add('visually-hidden');
         refs.paginationContainer.classList.remove('visually-hidden');
-        addPagination();
+//         addPagination();
         // renderSavedMovies(savedMovies);
       }
       if (savedMovies.length === 0) {
@@ -130,16 +130,16 @@ src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
 
     refs.libraryContainer.addEventListener('click', onFilmCardClick);
   }
-  function addPagination() {
-    const savedMovies = getDataFromLocalStorage(activeBtn);
-    let totalResults = savedMovies.length;
-    let opts = {
-      totalItems: `${totalResults}`,
-      itemsPerPage: 5,
-      visiblePages: 5,
-      centerAlign: true,
-      // currentPage: 1,
-    };
+//   function addPagination() {
+//     const savedMovies = getDataFromLocalStorage(activeBtn);
+//     let totalResults = savedMovies.length;
+//     let opts = {
+//       totalItems: `${totalResults}`,
+//       itemsPerPage: 5,
+//       visiblePages: 5,
+//       centerAlign: true,
+//       // currentPage: 1,
+//     };
 
     const pagination = new Pagination(refs.paginationContainer, opts);
     pagination.reset(totalResults);
