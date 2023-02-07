@@ -1,10 +1,11 @@
 const bodyRef = document.querySelector('body');
 const inputChange = document.querySelector('.theme-switch__toggle');
-const modalDivContent = document.querySelector('.modal-movie');
+const modalDivContent = document.querySelector('.modal-film-main');
 // const backdrop = document.querySelector('backdrop');
 // const teamModal = document.querySelector('team-modal');
 // const overlayDiv = document.querySelector('.lightbox__overlay');
 // const lightbox = document.querySelector('.lightbox');
+const footerKill = document.querySelector('.footer');
 
 const Theme = {
   LIGHT: 'light-theme',
@@ -43,4 +44,29 @@ if (localStorage.getItem('Theme') === 'darkTheme') {
   // backdrop.classList.add(Theme.DARK);
   //  teamModal.classList.add(Theme.DARK);
   // lightbox.classList.add(Theme.DARK);
+}
+
+//FOOTER BILD
+const ThemeFooter = {
+  FOOTERLIGHT: 'footer-light',
+  FOOTERDARK: 'footer-dark',
+};
+
+const delClassElemFooter = () => {
+  footerKill.classList.remove(ThemeFooter.FOOTERLIGHT, ThemeFooter.FOOTERDARK);
+};
+
+inputChange.addEventListener('change', () => {
+  delClassElemFooter();
+  if (inputChange.checked) {
+    localStorage.setItem('ThemeFooter', 'footer-dark');
+    footerKill.classList.add(ThemeFooter.FOOTERDARK);
+  } else {
+    localStorage.setItem('ThemeFooter', 'footer-light');
+    footerKill.classList.add(ThemeFooter.FOOTERLIGHT);
+  }
+});
+if (localStorage.getItem('ThemeFooter') === 'footer-dark') {
+  inputChange.setAttribute('checked', true);
+  footerKill.classList.add(ThemeFooter.FOOTERDARK);
 }

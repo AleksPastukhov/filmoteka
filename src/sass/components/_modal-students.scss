@@ -22,13 +22,22 @@
   }
 }
 .modal_foto{
+  border-radius: 10%;
+
     @media screen and (max-width: 480px) {
    width: 150px;
    height: 150px;
 
   }
+  width: 200px;
+  height: 200px;
 }
 .modal_list_text{
+  &:focus,
+    &:hover {
+    color: var(--accent-color);
+    }
+
      @media screen and (max-width: 480px) {
   display: none;
   }
@@ -92,6 +101,11 @@ fill: beige;
 .inverted_tumb{
     display: flex;
     gap: 25px;
+     @media screen and (max-width: 480px) {
+  
+  gap: 35px;
+  
+  }
 }
 .modal_students_name{
     
@@ -107,7 +121,7 @@ fill: beige;
     color: azure;
     @media screen and (max-width: 480px) {
   display: flex;
-  gap: 5px;
+  gap: 10px;
   flex-wrap: wrap;
   }
 }
@@ -132,10 +146,16 @@ fill: beige;
     height: 25px;
 border-radius: 50%;
 background-color: rgba($color: #f6eded, $alpha: 0.1);
+
+// &:focus,
+//     &:hover {
+//     background-color: var(--accent-color);
+//     }
+
 }
-.modal_list_icon{
+// .modal_list_icon{
    
-}
+// }
 // .modal_students_text{
     
 //     max-width: 100%;
