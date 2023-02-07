@@ -64,6 +64,6 @@ setTimeout(() => {
   onFirstLoad();
 }, 0);
 
-if (libraryPage) {
-  libraryPage.addEventListener('click', Library.onWatchedBtnClick);
-}
+// if (libraryPage) {
+//   libraryPage.addEventListener('click', Library.onWatchedBtnClick);
+// }
