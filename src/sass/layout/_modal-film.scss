@@ -11,7 +11,7 @@
     max-height: 850px;
     overflow-x: scroll;
     padding: 48px 20px 40px 20px;
-  background-color: var(--secondary-text-color);
+    background-color: var(--secondary-text-color);
     opacity: 1;
   }
 
@@ -25,7 +25,26 @@
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.2);
+    transition-duration: 750ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  // Намалював кнопку!
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    width: 14px;
+    height: 14px;
+  }
+
+  // Тут зупинився!
 
   .backdrop.is-hidden {
     opacity: 0;
@@ -33,20 +52,20 @@
     pointer-events: none;
   }
   //   Film Poster
- 
+
   .img-film {
     width: 240px;
     height: 357px;
     margin-bottom: 20px;
     border-radius: 5px;
-  
+
     @media screen and (min-width: 768px) {
       width: 264px;
       height: 373.55px;
       margin-right: 68px;
       margin-bottom: 0;
     }
-  
+
     @media screen and (min-width: 1280px) {
       width: 375px;
       height: 478px;
@@ -195,8 +214,6 @@
     top: 16px;
     // border: 2px solid #000000;
     transform: rotate(-90deg);
-    
-    
   }
 }
 
@@ -211,7 +228,26 @@
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.2);
+    transition-duration: 750ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  // Намалював кнопку!
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    width: 14px;
+    height: 14px;
+  }
+
+  // Тут зупинився!
 
   .backdrop.is-hidden {
     opacity: 0;
@@ -385,18 +421,26 @@
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.2);
+    transition-duration: 750ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  // .backdrop {
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   z-index: 1000;
-  //   transition: visibility 250ms, opacity 250ms;
-  //   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  // }
+  // Намалював кнопку!
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    width: 14px;
+    height: 14px;
+  }
+
+  // Тут зупинився!
 
   .backdrop.visually-hidden {
     opacity: 0;
