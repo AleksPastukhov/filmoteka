@@ -54,23 +54,11 @@
   //   Film Poster
 
   .img-film {
-    width: 240px;
-    height: 357px;
-    margin-bottom: 20px;
     border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
-    @media screen and (min-width: 768px) {
-      width: 264px;
-      height: 373.55px;
-      margin-right: 68px;
-      margin-bottom: 0;
-    }
-
-    @media screen and (min-width: 1280px) {
-      width: 375px;
-      height: 478px;
-      margin-right: 16px;
-    }
   }
 
   .modal-main-title {
@@ -157,8 +145,6 @@
     margin-left: auto;
     margin-right: auto;
     width: 240px;
-    height: 236px;
-    overflow: auto;
   }
 
   // Кнопки добавлення та видилення фільму
@@ -189,6 +175,7 @@
     margin-right: 20px;
     background-color:hsla(20, 92%, 51%, 0.834);
     &:hover {
+      color: rgba(255, 255, 255, 1);
       background-color:hsla(8, 99%, 52%, 0.834);
       box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
         1px 4px 6px rgba(235, 7, 7, 0.468);
@@ -208,6 +195,7 @@
     color: var(--main-text-color);
     background-color:hsla(20, 92%, 51%, 0.834);
     &:hover {
+      color: rgba(255, 255, 255, 1);
       background-color:hsla(8, 99%, 52%, 0.834);
       box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
         1px 4px 6px rgba(235, 7, 7, 0.468);
@@ -281,16 +269,21 @@
   // POSTER
 
   .img-posters {
-    display: flex;
+    display: block;
     margin-top: 40px;
-    margin-left: 36px;
+
     padding-bottom: 138px;
   }
   .img-film {
-    display: flex;
-    width: 264px;
-    height: 374px;
-    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+     width: 264px;
+      height: 374px;
+      border-radius: none;
+      margin-bottom: none;
+
+    
   }
   // ТАБЛИЦЯ З РЕЙТІНГАМИ
 
@@ -361,8 +354,6 @@
     line-height: 1.7;
     color: var(--main-text-color);
     text-align: justify;
-    height: 236px;
-    overflow: auto;
   }
 
   // Кнопки добавлення та видилення фільму
@@ -397,6 +388,7 @@
     margin-right: 15px;
     background-color:hsla(20, 92%, 51%, 0.834);
     &:hover {
+      color: rgba(255, 255, 255, 1);
       background-color:hsla(8, 99%, 52%, 0.834);
       box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
         1px 4px 6px rgba(235, 7, 7, 0.468);
@@ -421,6 +413,7 @@
     border-radius: 5px;
     background-color:hsla(20, 92%, 51%, 0.834);
     &:hover {
+      color: rgba(255, 255, 255, 1);
       background-color:hsla(8, 99%, 52%, 0.834);
       box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
         1px 4px 6px rgba(235, 7, 7, 0.468);
@@ -573,8 +566,6 @@
     line-height: 1.7;
     color: var(--main-text-color);
     text-align: justify;
-    height: 160px;
-    overflow: auto;
   }
 
   // Кнопки добавлення та видилення фільму
@@ -610,6 +601,7 @@
     margin-left: 12px;
     background-color:hsla(20, 92%, 51%, 0.834);
     &:hover {
+      color: rgba(255, 255, 255, 1);
       background-color:hsla(8, 99%, 52%, 0.834);
       box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
         1px 4px 6px rgba(235, 7, 7, 0.468);
@@ -636,6 +628,7 @@
     border-radius: 5px;
     background-color:hsla(20, 92%, 51%, 0.834);
     &:hover {
+      color: rgba(255, 255, 255, 1);
       background-color:hsla(8, 99%, 52%, 0.834);
       box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
         1px 4px 6px rgba(235, 7, 7, 0.468);
