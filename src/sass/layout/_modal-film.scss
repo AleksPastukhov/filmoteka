@@ -58,7 +58,6 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-
   }
 
   .modal-main-title {
@@ -151,13 +150,12 @@
 
   .modal-Btm {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     margin-top: 20px;
   }
 
   .addWatchmBtm {
-    border-radius: 5px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -165,22 +163,20 @@
     height: 44px;
     padding: 0;
     line-height: 1.33;
+    text-transform: uppercase;
     color: var(--main-text-color);
-    border: 1px solid var(--main-text-color);
-    border-radius: 5px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 27px;
-    padding-right: 27px;
-    margin-right: 20px;
-    background-color:hsla(20, 92%, 51%, 0.834);
+    background-color: rgba(255, 255, 255, 1);
     &:hover {
       color: rgba(255, 255, 255, 1);
-      background-color:hsla(8, 99%, 52%, 0.834);
-      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
-        1px 4px 6px rgba(235, 7, 7, 0.468);
+      background-color: hsla(8, 99%, 52%, 0.834);
+      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
+        0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
     }
 
+    padding: 13px;
+
+    border: 1px solid var(--main-text-color);
+    border-radius: 5px;
   }
 
   .addQueueBtm {
@@ -193,12 +189,12 @@
     line-height: 1.33;
     text-transform: uppercase;
     color: var(--main-text-color);
-    background-color:hsla(20, 92%, 51%, 0.834);
+    background-color: rgba(255, 255, 255, 1);
     &:hover {
       color: rgba(255, 255, 255, 1);
-      background-color:hsla(8, 99%, 52%, 0.834);
-      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
-        1px 4px 6px rgba(235, 7, 7, 0.468);
+      background-color: hsla(8, 99%, 52%, 0.834);
+      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
+        0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
     }
 
     padding: 13px;
@@ -217,7 +213,7 @@
     height: 15px;
     cursor: pointer;
     &:hover {
-      fill:var(--accent-color);
+      fill: var(--accent-color);
     }
   }
 }
@@ -278,10 +274,12 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-     width: 264px;
-      height: 374px;
-      border-radius: none;
-      margin-bottom: none;
+    border-radius: none;
+    margin-bottom: none;
+    min-width: 264px;
+    min-height: 374px;
+    padding-left: 36px;
+    object-fit: cover;
   }
   // ТАБЛИЦЯ З РЕЙТІНГАМИ
 
@@ -358,7 +356,7 @@
 
   .modal-Btm {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     margin-top: 20px;
   }
@@ -370,27 +368,27 @@
     font-size: 12px;
     line-height: 1.3;
 
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    width: 110px;
+    height: 44px;
+    padding: 0;
+    line-height: 1.33;
     text-transform: uppercase;
     color: var(--main-text-color);
-    border: 1px solid var(--main-text-color);
-    border-radius: 5px;
-
-    padding-top: 14px;
-    padding-bottom: 12px;
-    padding-left: 9px;
-    padding-right: 9px;
-    width: 125px;
-    margin-right: 15px;
-    background-color:hsla(20, 92%, 51%, 0.834);
+    background-color: rgba(255, 255, 255, 1);
     &:hover {
       color: rgba(255, 255, 255, 1);
-      background-color:hsla(8, 99%, 52%, 0.834);
-      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
-        1px 4px 6px rgba(235, 7, 7, 0.468);
+      background-color: hsla(8, 99%, 52%, 0.834);
+      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
+        0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
     }
+
+    padding: 13px;
+
+    border: 1px solid var(--main-text-color);
+    border-radius: 5px;
   }
 
   .addQueueBtm {
@@ -400,22 +398,27 @@
     font-size: 12px;
     line-height: 1.3;
 
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    width: 110px;
+    height: 44px;
+    padding: 0;
+    line-height: 1.33;
     text-transform: uppercase;
     color: var(--main-text-color);
-    padding: 13px;
-    width: 125px;
-    border: 1px solid var(--main-text-color);
-    border-radius: 5px;
-    background-color:hsla(20, 92%, 51%, 0.834);
+    background-color: rgba(255, 255, 255, 1);
     &:hover {
       color: rgba(255, 255, 255, 1);
-      background-color:hsla(8, 99%, 52%, 0.834);
-      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
-        1px 4px 6px rgba(235, 7, 7, 0.468);
+      background-color: hsla(8, 99%, 52%, 0.834);
+      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
+        0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
     }
+
+    padding: 13px;
+
+    border: 1px solid var(--main-text-color);
+    border-radius: 5px;
   }
 
   .svg-close {
@@ -429,7 +432,7 @@
     height: 15px;
     cursor: pointer;
     &:hover {
-      fill:var(--accent-color);
+      fill: var(--accent-color);
     }
   }
 }
@@ -570,67 +573,58 @@
 
   .modal-Btm {
     display: flex;
-    justify-content: start;
+    justify-content: space-around;
     width: 100%;
     margin-top: 20px;
   }
 
   .addWatchmBtm {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.3;
-
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    width: 110px;
+    height: 44px;
+    padding: 0;
+    line-height: 1.33;
     text-transform: uppercase;
     color: var(--main-text-color);
-    border: 1px solid var(--main-text-color);
-    border-radius: 5px;
-
-    padding-top: 14px;
-    padding-bottom: 12px;
-    // padding-left: 10px;
-    // padding-right: 10px;
-    width: 136px;
-
-    margin-right: 15px;
-    margin-left: 12px;
-    background-color:hsla(20, 92%, 51%, 0.834);
+    background-color: rgba(255, 255, 255, 1);
     &:hover {
       color: rgba(255, 255, 255, 1);
-      background-color:hsla(8, 99%, 52%, 0.834);
-      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
-        1px 4px 6px rgba(235, 7, 7, 0.468);
+      background-color: hsla(8, 99%, 52%, 0.834);
+      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
+        0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
     }
+
+    padding: 13px;
+
+    border: 1px solid var(--main-text-color);
+    border-radius: 5px;
   }
 
   .addQueueBtm {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.3;
-
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    width: 110px;
+    height: 44px;
+    padding: 0;
+    line-height: 1.33;
+    margin-right: 60px;
     text-transform: uppercase;
     color: var(--main-text-color);
+    background-color: rgba(255, 255, 255, 1);
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+      background-color: hsla(8, 99%, 52%, 0.834);
+      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
+        0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
+    }
 
     padding: 13px;
-    width: 136px;
 
     border: 1px solid var(--main-text-color);
     border-radius: 5px;
-    background-color:hsla(20, 92%, 51%, 0.834);
-    &:hover {
-      color: rgba(255, 255, 255, 1);
-      background-color:hsla(8, 99%, 52%, 0.834);
-      box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273), 0px 4px 4px rgba(231, 7, 7, 0.278),
-        1px 4px 6px rgba(235, 7, 7, 0.468);
-    }
   }
 
   .svg-close {
@@ -644,7 +638,7 @@
     height: 15px;
     cursor: pointer;
     &:hover {
-      fill:var(--accent-color);
+      fill: var(--accent-color);
     }
   }
 }
@@ -711,4 +705,9 @@
   left: 50%;
   background-color: rgba(228, 222, 219, 0.8);
   border-radius: 8px;
+}
+.play-circle-line {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
