@@ -22,11 +22,14 @@
   }
 }
 .modal_foto{
+
     @media screen and (max-width: 480px) {
    width: 150px;
    height: 150px;
 
   }
+  width: 200px;
+  height: 200px;
 }
 .modal_list_text{
   &:focus,
