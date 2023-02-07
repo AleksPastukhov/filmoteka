@@ -157,6 +157,8 @@
     margin-left: auto;
     margin-right: auto;
     width: 240px;
+    height: 236px;
+    overflow: auto;
   }
 
   // Кнопки добавлення та видилення фільму
@@ -274,8 +276,6 @@
     width: 264px;
     height: 374px;
     border-radius: 5px;
-
-    
   }
   // ТАБЛИЦЯ З РЕЙТІНГАМИ
 
@@ -346,6 +346,8 @@
     line-height: 1.7;
     color: var(--main-text-color);
     text-align: justify;
+    height: 236px;
+    overflow: auto;
   }
 
   // Кнопки добавлення та видилення фільму
@@ -540,6 +542,8 @@
     line-height: 1.7;
     color: var(--main-text-color);
     text-align: justify;
+    height: 160px;
+    overflow: auto;
   }
 
   // Кнопки добавлення та видилення фільму
