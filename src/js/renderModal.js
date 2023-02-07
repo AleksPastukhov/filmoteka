@@ -56,7 +56,9 @@ function onRenderModal(e) {
             <td class="level-intarest__name">Vote / Votes</td>
             <td class="midl-table"></td>
             <td class="level-intarest__value">
-              <span class="reting-level">${vote_average}</span> / ${vote_count}
+              <span class="reting-level">${vote_average.toFixed(
+                1
+              )}</span> / ${vote_count}
             </td>
           </tr>
 
