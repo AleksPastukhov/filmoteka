@@ -1,6 +1,6 @@
 const bodyRef = document.querySelector('body');
 const inputChange = document.querySelector('.theme-switch__toggle');
-const modalDivContent = document.querySelector('.modal-movie');
+const modalDivContent = document.querySelector('.modal-film-main');
 // const backdrop = document.querySelector('backdrop');
 // const teamModal = document.querySelector('team-modal');
 // const overlayDiv = document.querySelector('.lightbox__overlay');

@@ -26,3 +26,4 @@ import './js/trailer';
 import './js/modal';
 import './js/renderModal';
 import './js/modalBtnsAction';
+import './js/dark-theme';
