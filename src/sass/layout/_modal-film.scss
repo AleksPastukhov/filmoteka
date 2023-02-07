@@ -13,6 +13,7 @@
     padding: 48px 20px 40px 20px;
     background-color: var(--secondary-text-color);
     opacity: 1;
+    border-radius: 10px;
   }
 
   .backdrop {
@@ -126,7 +127,7 @@
     font-size: 12px;
     line-height: 16px;
     text-transform: uppercase;
-    color: var(--main-text-color);
+    color: #000000;
     margin-bottom: 8px;
     padding-left: 20px;
   }
@@ -140,7 +141,7 @@
     font-size: 12px;
     line-height: 1.7;
     text-align: justify;
-    // color: var(--main-text-color);
+    color: #000000;
     margin-left: auto;
     margin-right: auto;
     width: 240px;
@@ -231,6 +232,7 @@
     background: rgba(0, 0, 0, 0.2);
     transition-duration: 750ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
   }
 
   // Намалював кнопку!
@@ -264,6 +266,7 @@
     background-color: var(--secondary-text-color);
     padding: 48px 20px 40px 20px;
     width: 704px;
+    border-radius: 10px;
   }
 
   // POSTER
@@ -272,7 +275,7 @@
     display: block;
     margin-top: 40px;
 
-    padding-bottom: 138px;
+    margin-bottom:40px;
   }
   .img-film {
     display: block;
@@ -329,6 +332,14 @@
   td {
     padding-bottom: 8px;
   }
+  .reting-level {
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background: #ff6b08;
+    border-radius: 5px;
+  }
 
   // Заголовок ABOUT
 
@@ -339,7 +350,7 @@
     font-size: 12px;
     line-height: 16px;
     text-transform: uppercase;
-    // color: var(--main-text-color);
+    color: #000000;
     margin-top: 20px;
     margin-bottom: 8px;
   }
@@ -352,7 +363,7 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.7;
-    // color: var(--main-text-color);
+    color: #000000;
     text-align: justify;
   }
 
@@ -489,6 +500,7 @@
     padding: 48px 20px 40px 20px;
     width: 806px;
     height: 560px;
+    border-radius: 10px;
   }
 
   // POSTER
@@ -551,6 +563,14 @@
     align-items: center;
     // color: var(--main-text-color);
   }
+  .reting-level {
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background: #ff6b08;
+    border-radius: 5px;
+  }
 
   // Заголовок ABOUT
 
@@ -561,7 +581,7 @@
     font-size: 12px;
     line-height: 1.3;
     text-transform: uppercase;
-    // color: var(--main-text-color);
+    color: #000000;
     margin-top: 12px;
     margin-bottom: 8px;
   }
@@ -574,7 +594,7 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.7;
-    // color: var(--main-text-color);
+    color: #000000;
     text-align: justify;
   }
 
