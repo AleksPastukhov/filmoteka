@@ -2,15 +2,18 @@ import { onRenderModal } from './renderModal';
 import { onTrailerBtn } from './trailer';
 import { removeDataFromLocalStorage } from './local-storage-info';
 import { saveMovieToLibrary } from './modalBtnsAction';
+import { libraryHandler } from './myLibrary';
 
 const refs = {
   filmGalaryContainer: document.querySelector('.home'),
   modal: document.querySelector('.backdrop'),
 };
 
-refs.filmGalaryContainer.addEventListener('click', onFilmCardClick);
+if (refs.filmGalaryContainer) {
+  refs.filmGalaryContainer.addEventListener('click', onFilmCardClick);
+}
 
-function onFilmCardClick(evt) {
+export function onFilmCardClick(evt) {
   evt.preventDefault();
 
   if (
@@ -40,8 +43,8 @@ function onCloseBtnClick() {
   refs.modal.classList.add('visually-hidden');
   document.body.style.overflow = 'auto';
   removeDataFromLocalStorage('currentMovie');
+  libraryHandler();
 }
-
 function onMovieCardClick(evt) {
   window.addEventListener('keydown', onKeyEscpPress);
 
