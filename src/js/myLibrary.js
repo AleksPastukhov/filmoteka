@@ -3,6 +3,7 @@
 import { Spinner } from './loader.js';
 import { getDataFromLocalStorage } from './local-storage-info';
 import { onFilmCardClick } from './modal';
+import Pagination from 'tui-pagination';
 
 import ComingSoonImg from '../images/movie-poster-coming-soon.jpg';
 import { getDataFromLocalStorage } from './local-storage-info';
@@ -18,9 +19,11 @@ const refs = {
   libraryName: document.querySelector('span.library-name'),
   libraryCard: document.querySelector('.library__item'),
   activeBtn: document.querySelector('button.is-active'),
+  paginationContainer: document.querySelector('#pagination'),
 };
 
 const spinner = new Spinner('.spinner');
+
 let activeBtn = 'watched';
 
 export function libraryHandler() {
@@ -48,6 +51,7 @@ export function libraryHandler() {
         refs.emptyLibrary.classList.remove('visually-hidden');
       }
     }
+
     function onQueueBtnClick() {
       const savedMovies = getDataFromLocalStorage('queue');
       changeActiveBtn(refs.queueBtn, refs.watchedBtn);
@@ -67,13 +71,19 @@ export function libraryHandler() {
       const savedMovies = getDataFromLocalStorage(library);
       if (savedMovies) {
         refs.emptyLibrary.classList.add('visually-hidden');
-        renderSavedMovies(savedMovies);
-        return;
-      } else if (savedMovies.length === 0) {
+        refs.paginationContainer.classList.remove('visually-hidden');
+        addPagination();
+        // renderSavedMovies(savedMovies);
+      }
+      if (savedMovies.length === 0) {
         refs.emptyLibrary.classList.remove('visually-hidden');
+        refs.paginationContainer.classList.add('visually-hidden');
       }
     }
     function renderSavedMovies(movies) {
+      if (!movies) {
+        refs.emptyLibrary.classList.remove('visually-hidden');
+      }
       const genresData = getDataFromLocalStorage(DATA_STORAGE);
       refs.libraryList.innerHTML = movies
         .map(
@@ -117,14 +127,42 @@ src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
         )
         .join('');
     }
-    const savedMoviesWatched = getDataFromLocalStorage('watched');
-    if (savedMoviesWatched) {
-      renderSavedMovies(savedMoviesWatched);
-    }
-    if (savedMoviesWatched.length === 0) {
-      refs.emptyLibrary.classList.remove('visually-hidden');
-    }
+
     refs.libraryContainer.addEventListener('click', onFilmCardClick);
+  }
+  function addPagination() {
+    const savedMovies = getDataFromLocalStorage(activeBtn);
+    let totalResults = savedMovies.length;
+    let opts = {
+      totalItems: `${totalResults}`,
+      itemsPerPage: 5,
+      visiblePages: 5,
+      centerAlign: true,
+      // currentPage: 1,
+    };
+
+    const pagination = new Pagination(refs.paginationContainer, opts);
+    pagination.reset(totalResults);
+    pagination.on('beforeMove', e => {
+      currentPage = e.page;
+      // opts.currentPage = currentPage;
+      if (!savedMovies) {
+        return;
+      }
+      function chunkArray(array, itemsPerPage) {
+        const chunkedArray = [];
+        let index = 0;
+        while (index < array.length) {
+          const item = array.slice(index, itemsPerPage + index);
+          result.push(item);
+          index += itemsPerPage;
+        }
+        return chunkedArray;
+      }
+      const chunkedSavedMovies = chunkArray((savedMovies, opts.itemsPerPage));
+      console.log(chunkArray((savedMovies, opts.itemsPerPage)));
+      renderSavedMovies(chunkedSavedMovies[currentPage]);
+    });
   }
 }
 
