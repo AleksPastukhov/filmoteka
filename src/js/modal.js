@@ -1,16 +1,19 @@
-
 import { onRenderModal } from './renderModal';
+import { onTrailerBtn } from './trailer';
+import { removeDataFromLocalStorage } from './local-storage-info';
+import { saveMovieToLibrary } from './modalBtnsAction';
+import { libraryHandler } from './myLibrary';
 
 const refs = {
   filmGalaryContainer: document.querySelector('.home'),
-  closeModalBtn: document.querySelector('.modal-close'),
   modal: document.querySelector('.backdrop'),
 };
 
-refs.filmGalaryContainer.addEventListener('click', onFilmCardClick);
-refs.closeModalBtn.addEventListener('click', onCloseBtnClick);
+if (refs.filmGalaryContainer) {
+  refs.filmGalaryContainer.addEventListener('click', onFilmCardClick);
+}
 
-function onFilmCardClick(evt) {
+export function onFilmCardClick(evt) {
   evt.preventDefault();
 
   if (
@@ -29,6 +32,8 @@ function onFilmCardClick(evt) {
     return;
   }
   onRenderModal(evt);
+  const closeModalBtn = document.querySelector('.modal-close');
+  closeModalBtn.addEventListener('click', onCloseBtnClick);
   refs.modal.classList.remove('visually-hidden');
   onMovieCardClick();
   document.body.style.overflow = 'hidden';
@@ -37,8 +42,9 @@ function onFilmCardClick(evt) {
 function onCloseBtnClick() {
   refs.modal.classList.add('visually-hidden');
   document.body.style.overflow = 'auto';
+  removeDataFromLocalStorage('currentMovie');
+  libraryHandler();
 }
-
 function onMovieCardClick(evt) {
   window.addEventListener('keydown', onKeyEscpPress);
 
@@ -56,4 +62,9 @@ function onMovieCardClick(evt) {
       onCloseBtnClick();
     }
   }
+
+  // Трейлер
+  const trailerBtn = document.querySelector('.trailer-btn');
+  const filmId = trailerBtn.getAttribute('data-id');
+  trailerBtn.addEventListener('click', onTrailerBtn);
 }

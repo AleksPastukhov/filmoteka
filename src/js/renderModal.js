@@ -4,17 +4,28 @@ import ComingSoonImg from '../images/movie-poster-coming-soon.jpg';
 import { getGenresFromIdModal } from './getGenresFromId';
 import { getDataFromLocalStorage } from './local-storage-info';
 import { DATA_STORAGE } from './genres';
+import svg from '../images/icons.svg';
+import {
+  getDataFromLocalStorage,
+  saveDataToLocalStorage,
+  removeDataFromLocalStorage,
+} from './local-storage-info';
+import { saveMovieToLibrary } from './modalBtnsAction';
+
 export { onRenderModal };
 
 const genresData = getDataFromLocalStorage(DATA_STORAGE);
 const modalCont = document.querySelector('.modal-film-main');
 
 function onRenderModal(e) {
+  // modalCont.innerHTML = '';
   const films = getDataFromLocalStorage(FILMS_DATA);
   const currentFilmCard = e.target.closest('li');
   const filmId = currentFilmCard.getAttribute('id');
   const neededFilmArr = films.filter(film => film.id === Number(filmId));
   const neededFilm = neededFilmArr[0];
+  removeDataFromLocalStorage('currentMovie');
+  saveDataToLocalStorage('currentMovie', neededFilm);
   const {
     poster_path,
     vote_count,
@@ -32,6 +43,9 @@ function onRenderModal(e) {
     <div class="img-posters">
       <img class="img-film container" 
       src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
+       <button class="trailer-btn" data-id="${id}">
+        <i class="ri-play-circle-line"></i>
+      </button>
     </div>
 
     <div class="film-commercial">
@@ -69,17 +83,27 @@ function onRenderModal(e) {
       </table>
       <p class="comment-title">About</p>
       <p class="about-film">
-       ${overview}
+       ${overview === '' || !overview ? 'No description...' : overview}
       </p>
       <ul class="modal-Btm">
         <li>
-          <button class="addWatchmBtm" type="button">add to Watched</button>
+        <button class="addWatchmBtm" type="button" data-action="add">add to watched</button>
         </li>
         <li>
-          <button class="addQueueBtm" type="button">add to queue</button>
+          <button class="addQueueBtm" type="button" data-action="add">add to queue</button>
         </li>
       </ul>
-    </div>`;
+    </div>
+    <button type="button" class="modal-close">
+    <svg class="svg-close" width="14" height="14">
+      <use href="${svg}#close"></use>
+    </svg>
+  </button>`;
 
   modalCont.innerHTML = modalMarkup;
+  saveMovieToLibrary(getDataFromLocalStorage('currentMovie'));
 }
+
+// <button class="svg-close">
+//   <i class="ri-close-circle-line"></i>
+// </button>;
