@@ -56,10 +56,10 @@ const dev = [
     name: `Ivan Chmil`,
     text: `5`,
     img: photo5,
-    ml: `#`,
-    tg: `#`,
-    ln: `#`,
-    git: `#`,
+    ml: `ivan.chmil.98@gmail.com`,
+    tg: `https://t.me/slava_zevsu`,
+    ln: `https://www.linkedin.com/in/ivan-chmil-u/`,
+    git: `https://github.com/W1n-chester`,
   },
   {
     name: `Oleksandr Filippov`,
@@ -188,7 +188,7 @@ function createMarkupFirst(array) {
         <h3 class="modal_students_name">${array[0].name}</h3>
         <ul class="modal_list">
           <li class="modal_list_item">
-            <a class="modal_list_link" href="${array[0].ml}">
+            <a class="modal_list_link" href="mailto:${array[0].ml}">
               <div class="modal_list_con">
                 <svg class="modal_list_icon" width="15" height="15">
                   <use href="${iconEnvelope}#icon-envelope"></use>
@@ -241,40 +241,44 @@ function slidersMarkup(array, index) {
         <h3 class="modal_students_name">${array[index].name}</h3>
         <ul class="modal_list">
           <li class="modal_list_item">
-            <a class="modal_list_link" href="${array[index].ml}">
+            <a class="modal_list_link" href="mailto:${array[index].ml}" target="_blank">
               <div class="modal_list_con">
                 <svg class="modal_list_icon" width="15" height="15">
                   <use href="${iconEnvelope}#icon-envelope"></use>
                 </svg>
               </div>
-              E-mail</a>
+              <span class="modal_list_text" >      
+                 E-mail
+              </span></a>
           </li>
           <li class="modal_list_item">
-            <a class="modal_list_link" href="${array[index].tg}">
+            <a class="modal_list_link" href="${array[index].tg}" target="_blank">
               <div class="modal_list_con">
                 <svg class="modal_list_icon" width="15" height="15">
                   <use href="${iconSend}#icon-send"></use>
                 </svg>
-              </div>
-                Telegram</a>
+              </div><span class="modal_list_text">
+                 Telegram </span></a>
           </li>
           <li class="modal_list_item">
-            <a class="modal_list_link" href="${array[index].ln}">
+            <a class="modal_list_link" href="${array[index].ln}" target="_blank">
               <div class="modal_list_con">
                 <svg class="modal_list_icon" width="15" height="15">
                   <use href="${iconLinkedin}#icon-linkedin"></use>
                 </svg>
-              </div>
-                Linkedin</a>
+              </div><span class="modal_list_text">
+                 Linkedin    
+              </span></a>
           </li>
           <li class="modal_list_item">
-            <a class="modal_list_link" href="${array[index].git}">
+            <a class="modal_list_link" href="${array[index].git}" target="_blank">
               <div class="modal_list_con">
                 <svg class="modal_list_icon" width="15" height="15">
                   <use href="${iconGithub}#icon-github"></use>
                 </svg>
-              </div>
-                GitHub</a>
+              </div><span class="modal_list_text">
+                 GitHub    
+             </span></a>
           </li>
         </ul>
       </div>`;
