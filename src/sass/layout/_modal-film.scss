@@ -3,9 +3,9 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .modal-film-main {
     position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%) scale(1);
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%) scale(1);
     width: 280px;
     height: 90vh;
     max-height: 850px;
@@ -258,6 +258,9 @@
   .modal-film-main {
     display: flex;
     position: relative;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%) scale(1);
     background-color: var(--secondary-text-color);
     padding: 48px 20px 40px 20px;
     width: 704px;
@@ -479,6 +482,9 @@
   .modal-film-main {
     display: flex;
     position: relative;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%) scale(1);
     background: var(--secondary-text-color);
     padding: 48px 20px 40px 20px;
     width: 806px;
