@@ -4,16 +4,23 @@
   .modal-film-main {
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translate(0, -50%) scale(1);
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
     width: 280px;
     height: 90vh;
     max-height: 850px;
     overflow-x: scroll;
     padding: 48px 20px 40px 20px;
     background-color: var(--secondary-text-color);
-    opacity: 1;
     border-radius: 10px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .backdrop.is-hidden & {
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 0;
+    }
   }
 
   .backdrop {
@@ -26,8 +33,16 @@
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.2);
-    transition-duration: 750ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.is-hidden {
+      visibility: hidden;
+      opacity: 1;
+      pointer-events: none;
+    }
   }
 
   // Намалював кнопку!
@@ -47,8 +62,9 @@
 
   // Тут зупинився!
 
-  .backdrop.is-hidden {
+  .backdrop.visually-hidden {
     opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
     visibility: hidden;
     pointer-events: none;
   }
@@ -230,9 +246,16 @@
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.2);
-    transition-duration: 750ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.is-hidden {
+      visibility: hidden;
+      opacity: 1;
+      pointer-events: none;
+    }
   }
 
   // Намалював кнопку!
@@ -261,12 +284,21 @@
     display: flex;
     position: relative;
     top: 50%;
-    left: 0;
-    transform: translate(0, -50%) scale(1);
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
     background-color: var(--secondary-text-color);
     padding: 48px 20px 40px 20px;
     width: 704px;
     border-radius: 10px;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .backdrop.is-hidden & {
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 0;
+    }
   }
 
   // POSTER
@@ -275,7 +307,7 @@
     display: block;
     margin-top: 40px;
 
-    margin-bottom:40px;
+    margin-bottom: 40px;
   }
   .img-film {
     display: block;
@@ -463,8 +495,16 @@
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.2);
-    transition-duration: 750ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.is-hidden {
+      visibility: hidden;
+      opacity: 1;
+      pointer-events: none;
+    }
   }
 
   // Намалював кнопку!
@@ -478,29 +518,30 @@
     align-items: center;
     background-color: transparent;
     border: none;
-    // width: 14px;
-    // height: 14px;
   }
 
   // Тут зупинився!
 
-  .backdrop.visually-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translate(-50%, -50%) scale(0.5);
-  }
   .modal-film-main {
     display: flex;
-    position: relative;
+    position: absolute;
     top: 50%;
-    left: 0;
-    transform: translate(0, -50%) scale(1);
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
     background: var(--secondary-text-color);
     padding: 48px 20px 40px 20px;
     width: 806px;
     height: 560px;
     border-radius: 10px;
+    opacity: 1;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .backdrop.is-hidden & {
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 0;
+    }
   }
 
   // POSTER

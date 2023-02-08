@@ -34,13 +34,13 @@ export function onFilmCardClick(evt) {
   onRenderModal(evt);
   const closeModalBtn = document.querySelector('.modal-close');
   closeModalBtn.addEventListener('click', onCloseBtnClick);
-  refs.modal.classList.remove('visually-hidden');
+  refs.modal.classList.remove('is-hidden');
   onMovieCardClick();
   document.body.style.overflow = 'hidden';
 }
 
 function onCloseBtnClick() {
-  refs.modal.classList.add('visually-hidden');
+  refs.modal.classList.add('is-hidden');
   document.body.style.overflow = 'auto';
   removeDataFromLocalStorage('currentMovie');
   libraryHandler();
