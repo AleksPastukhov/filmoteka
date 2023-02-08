@@ -4,6 +4,7 @@ import { renderFilmsToGallery } from './galleryFilmsMarkup';
 import { saveGenresToLocalStorage } from './genres';
 import { Spinner } from './loader';
 import { saveDataToLocalStorage } from './local-storage-info';
+import * as Library from './myLibrary';
 
 const FILMS_DATA = 'films-data';
 export { FILMS_DATA };
@@ -12,6 +13,7 @@ const spinner = new Spinner('.spinner');
 
 const paginationContainer = document.querySelector('#pagination');
 const filmsApiService = new FilmsApiService();
+const libraryPage = document.querySelector('.library-page');
 
 saveGenresToLocalStorage();
 
@@ -61,3 +63,7 @@ async function onFirstLoad() {
 setTimeout(() => {
   onFirstLoad();
 }, 0);
+
+// if (libraryPage) {
+//   libraryPage.addEventListener('click', Library.onWatchedBtnClick);
+// }

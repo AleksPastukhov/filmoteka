@@ -4,7 +4,7 @@
   //   background-color: #f8514e81;
   fill: rgba(237, 24, 44, 0.3);
   backdrop-filter: blur(4px);
-  right: 20px;
+  right: calc(100%/2 - 670px);
   bottom: 20px;
   border-radius: 50%;
   cursor: pointer;

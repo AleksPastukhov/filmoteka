@@ -2,14 +2,14 @@
   // Для позиціонування контенту аби футер завжди був притиснутий до низу
   flex-shrink: 0;
 
-  background-color: var(--background-color);
+  // background-color: var(--background-color);
 }
 
 .footer__wrap {
   text-align: center;
   padding-top: 29px;
   padding-bottom: 28px;
-  color: #545454;
+  // color: #545454;
   font-family: 'Roboto';
   font-size: 14px;
   @media screen and (min-width: 768px) {
