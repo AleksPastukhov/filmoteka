@@ -15,6 +15,7 @@ import photo10 from '../images/team/photo0.jpg';
 import photo11 from '../images/team/photo11.jpg';
 import photo12 from '../images/team/photo12.jpg';
 import photo13 from '../images/team/photo0.jpg';
+import photo14 from '../images/team/photo14.jpg';
 const dev = [
   {
     name: `Aleks Pastukhov`,
@@ -125,13 +126,13 @@ const dev = [
     git: `https://github.com/primarch93`,
   },
   {
-    name: `Kostya`,
+    name: `Konstantin Prokhorchuk`,
     text: `13`,
-    img: photo13,
+    img: photo14,
     ml: `#`,
-    tg: `#`,
+    tg: `https://t.me/KostyaProkhorchuk`,
     ln: `#`,
-    git: `#`,
+    git: `https://github.com/Konstantin2023`,
   },
 ];
 const refs = {
