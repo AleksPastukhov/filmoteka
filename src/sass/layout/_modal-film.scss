@@ -184,13 +184,19 @@
     color: var(--main-text-color);
     background-color: rgba(255, 255, 255, 1);
     transition: background-color 250ms var(--timing-function),
-      color 250ms var(--timing-function), transform 250ms var(--timing-function);
+      color 250ms var(--timing-function), transform 250ms var(--timing-function),
+      border-color 250ms var(--timing-function);
     &:hover {
       transform: scale(1.2);
       color: rgba(255, 255, 255, 1);
       background-color: var(--accent-color);
       // box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
       //   0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
+    }
+    &.added {
+      border-color: var(--accent-color);
+      color: rgba(255, 255, 255, 1);
+      background-color: var(--accent-color);
     }
 
     padding: 13px;
@@ -211,13 +217,19 @@
     color: var(--main-text-color);
     background-color: rgba(255, 255, 255, 1);
     transition: background-color 250ms var(--timing-function),
-      color 250ms var(--timing-function), transform 250ms var(--timing-function);
+      color 250ms var(--timing-function), transform 250ms var(--timing-function),
+      border-color 250ms var(--timing-function);
     &:hover {
       transform: scale(1.2);
       color: rgba(255, 255, 255, 1);
       background-color: var(--accent-color);
       // box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
       //   0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
+    }
+    &.added {
+      border-color: var(--accent-color);
+      color: rgba(255, 255, 255, 1);
+      background-color: var(--accent-color);
     }
 
     padding: 13px;
@@ -436,13 +448,19 @@
     color: var(--main-text-color);
     background-color: rgba(255, 255, 255, 1);
     transition: background-color 250ms var(--timing-function),
-      color 250ms var(--timing-function), transform 250ms var(--timing-function);
+      color 250ms var(--timing-function), transform 250ms var(--timing-function),
+      border-color 250ms var(--timing-function);
     &:hover {
       transform: scale(1.2);
       color: rgba(255, 255, 255, 1);
       background-color: var(--accent-color);
       // box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
       //   0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
+    }
+    &.added {
+      border-color: var(--accent-color);
+      color: rgba(255, 255, 255, 1);
+      background-color: var(--accent-color);
     }
 
     padding: 13px;
@@ -469,13 +487,19 @@
     color: var(--main-text-color);
     background-color: rgba(255, 255, 255, 1);
     transition: background-color 250ms var(--timing-function),
-      color 250ms var(--timing-function), transform 250ms var(--timing-function);
+      color 250ms var(--timing-function), transform 250ms var(--timing-function),
+      border-color 250ms var(--timing-function);
     &:hover {
       transform: scale(1.2);
       color: rgba(255, 255, 255, 1);
       background-color: var(--accent-color);
       // box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
       //   0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
+    }
+    &.added {
+      border-color: var(--accent-color);
+      color: rgba(255, 255, 255, 1);
+      background-color: var(--accent-color);
     }
 
     padding: 13px;
@@ -680,13 +704,19 @@
     color: var(--main-text-color);
     background-color: rgba(255, 255, 255, 1);
     transition: background-color 250ms var(--timing-function),
-      color 250ms var(--timing-function), transform 250ms var(--timing-function);
+      color 250ms var(--timing-function), transform 250ms var(--timing-function),
+      border-color 250ms var(--timing-function);
     &:hover {
       transform: scale(1.2);
       color: rgba(255, 255, 255, 1);
       background-color: var(--accent-color);
       // box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
       //   0px 4px 4px rgba(231, 7, 7, 0.278), 1px 4px 6px rgba(235, 7, 7, 0.468);
+    }
+    &.added {
+      border-color: var(--accent-color);
+      color: rgba(255, 255, 255, 1);
+      background-color: var(--accent-color);
     }
 
     padding: 13px;
@@ -708,13 +738,19 @@
     color: var(--main-text-color);
     background-color: rgba(255, 255, 255, 1);
     transition: background-color 250ms var(--timing-function),
-      color 250ms var(--timing-function), transform 250ms var(--timing-function);
+      color 250ms var(--timing-function), transform 250ms var(--timing-function),
+      border-color 250ms var(--timing-function);
     &:hover {
       transform: scale(1.2);
       color: rgba(255, 255, 255, 1);
       background-color: var(--accent-color);
       // box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.273),
       //   0px 4px 4px var(--accent-color), 1px 4px 6px var(--accent-color);
+    }
+    &.added {
+      border-color: var(--accent-color);
+      color: rgba(255, 255, 255, 1);
+      background-color: var(--accent-color);
     }
 
     padding: 13px;
