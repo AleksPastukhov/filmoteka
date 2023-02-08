@@ -1,4 +1,3 @@
-import { FILMS_DATA } from './render-main-page';
 import { getDataFromLocalStorage } from './local-storage-info';
 import ComingSoonImg from '../images/movie-poster-coming-soon.jpg';
 import { getGenresFromIdModal } from './getGenresFromId';
@@ -14,16 +13,23 @@ import { saveMovieToLibrary } from './modalBtnsAction';
 
 export { onRenderModal };
 
+const filmsData = 'films-data';
+const watched = 'watched';
+const queue = 'queue';
+
 const genresData = getDataFromLocalStorage(DATA_STORAGE);
 const modalCont = document.querySelector('.modal-film-main');
 
 function onRenderModal(e) {
-  // modalCont.innerHTML = '';
-  const films = getDataFromLocalStorage(FILMS_DATA);
+  const filmData = getDataFromLocalStorage(filmsData);
+  const filmsWatched = getDataFromLocalStorage(watched);
+  const filmsQueue = getDataFromLocalStorage(queue);
+  const films = [...filmData, ...filmsWatched, ...filmsQueue];
   const currentFilmCard = e.target.closest('li');
   const filmId = currentFilmCard.getAttribute('id');
   const neededFilmArr = films.filter(film => film.id === Number(filmId));
   const neededFilm = neededFilmArr[0];
+
   removeDataFromLocalStorage('currentMovie');
   saveDataToLocalStorage('currentMovie', neededFilm);
   const {

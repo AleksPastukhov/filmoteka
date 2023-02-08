@@ -7,7 +7,6 @@ import { saveDataToLocalStorage } from './local-storage-info';
 import * as Library from './myLibrary';
 
 const FILMS_DATA = 'films-data';
-export { FILMS_DATA };
 
 const spinner = new Spinner('.spinner');
 

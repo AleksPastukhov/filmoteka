@@ -3,7 +3,8 @@ import { renderFilmsToGallery } from './galleryFilmsMarkup';
 import Pagination from 'tui-pagination';
 import { Spinner } from './loader';
 import { saveDataToLocalStorage } from './local-storage-info';
-import { FILMS_DATA } from './render-main-page';
+
+const FILMS_DATA = 'films-data';
 
 const spinner = new Spinner('.spinner');
 
@@ -21,8 +22,16 @@ function getFilmsOnSubmit(evt) {
 
   let page = 1;
   const inputValue = evt.currentTarget.searchQuery.value;
-
   spinner.addSpinner();
+
+  if (!inputValue) {
+    headerNotification.classList.remove('visually-hidden');
+    setTimeout(() => {
+      headerNotification.classList.add('visually-hidden');
+    }, 4500);
+    spinner.removeSpinner();
+    return;
+  }
 
   filmsApiService
     .getFilms('search', page, inputValue)
