@@ -13,7 +13,7 @@ import photo8 from '../images/team/photo8.jpg';
 import photo9 from '../images/team/photo0.jpg';
 import photo10 from '../images/team/photo0.jpg';
 import photo11 from '../images/team/photo11.jpg';
-import photo12 from '../images/team/photo12.jpg';
+// import photo12 from '../images/team/photo12.jpg';
 import photo13 from '../images/team/photo0.jpg';
 const dev = [
   {
@@ -118,7 +118,7 @@ const dev = [
   {
     name: `Kravchenko Yehor`,
     text: `12`,
-    img: photo12,
+//     img: photo12,
     ml: `Sugonegor@gmail.com`,
     tg: `https://t.me/Egorin93`,
     ln: `#`,
