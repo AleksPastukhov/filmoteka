@@ -46,6 +46,7 @@
   vertical-align: middle;
   border: 1px solid transparent;
   border-radius: 5px;
+  transition: border-color 250ms var(--timing-function);
 }
 
 .tui-pagination .tui-page-btn:hover,
@@ -57,42 +58,43 @@
 .tui-pagination strong {
   color: #fff;
   background: #ff6b08;
-  border-color: #4b96e6;
+  border-color: #ff6b08;
   cursor: default;
   width: 40px;
   height: 40px;
 
   background: #ff6b08;
   border-radius: 5px;
+  // transition: background-color 250ms var(--timing-function);
 }
 
-.tui-pagination .tui-is-selected:hover {
-  background-color: #4b96e6;
-}
+// .tui-pagination .tui-is-selected:hover {
+//   background-color: #4b96e6;
+// }
 
 .tui-pagination .tui-first-child.tui-is-selected,
 .tui-pagination strong.tui-first-child {
   margin-left: 0;
 }
 
-.tui-pagination .tui-first-child,
-.tui-pagination .tui-prev-is-ellip {
-  // display: none;
-  border-left: 1px solid #ddd;
-}
+// .tui-pagination .tui-first-child,
+// .tui-pagination .tui-prev-is-ellip {
+//   // display: none;
+//   border-left: 1px solid #ddd;
+// }
 
-.tui-pagination .tui-last-child,
-.tui-pagination .tui-next-is-ellip {
-  border-right: 1px solid #ddd;
-}
+// .tui-pagination .tui-last-child,
+// .tui-pagination .tui-next-is-ellip {
+//   border-right: 1px solid #ddd;
+// }
 
-.tui-pagination .tui-first-child.tui-is-selected {
-  border-left: 1px solid #4b96e6;
-}
+// .tui-pagination .tui-first-child.tui-is-selected {
+//   border-left: 1px solid #4b96e6;
+// }
 
-.tui-pagination .tui-last-child.tui-is-selected {
-  border-right: 1px solid #4b96e6;
-}
+// .tui-pagination .tui-last-child.tui-is-selected {
+//   border-right: 1px solid #4b96e6;
+// }
 
 .tui-pagination .tui-first,
 .tui-pagination .tui-prev,
@@ -109,7 +111,7 @@
   white-space: nowrap;
   font-weight: normal;
   border: 1px solid transparent;
-  background-color: #f7f7f7;
+  background-color: transparent;
 }
 
 .tui-pagination .tui-prev-is-ellip {
@@ -202,7 +204,8 @@
 }
 
 .tui-pagination .tui-is-disabled:hover {
-  background: #fff;
+  // background: #fff;
+  border-color: transparent;
   cursor: default;
 }
 
