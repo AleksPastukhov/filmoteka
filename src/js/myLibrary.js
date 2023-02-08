@@ -45,22 +45,21 @@ export function libraryHandler() {
       activeBtn = 'watched';
       changeActiveBtn(refs.watchedBtn, refs.queueBtn);
       checkLocalStorage('watched');
-      refs.libraryName.textContent = 'watched';
-      renderSavedMovies(savedMovies);
+      addPagination();
       if (savedMovies.length === 0) {
         refs.emptyLibrary.classList.remove('visually-hidden');
+        refs.libraryName.textContent = 'watched';
       }
     }
-
     function onQueueBtnClick() {
       const savedMovies = getDataFromLocalStorage('queue');
       changeActiveBtn(refs.queueBtn, refs.watchedBtn);
       checkLocalStorage('queue');
-      refs.libraryName.textContent = 'queue';
       activeBtn = 'queue';
-      renderSavedMovies(savedMovies);
+      addPagination();
       if (savedMovies.length === 0) {
         refs.emptyLibrary.classList.remove('visually-hidden');
+        refs.libraryName.textContent = 'queue';
       }
     }
     function changeActiveBtn(btn1, btn2) {
@@ -72,20 +71,22 @@ export function libraryHandler() {
       if (savedMovies) {
         refs.emptyLibrary.classList.add('visually-hidden');
         refs.paginationContainer.classList.remove('visually-hidden');
-        addPagination();
-        // renderSavedMovies(savedMovies);
+        refs.libraryList.classList.remove('visually-hidden');
       }
       if (savedMovies.length === 0) {
         refs.emptyLibrary.classList.remove('visually-hidden');
         refs.paginationContainer.classList.add('visually-hidden');
+        refs.libraryList.classList.add('visually-hidden');
       }
     }
-    function renderSavedMovies(movies) {
-      if (!movies) {
+    function renderSavedMovies(savedMovies) {
+      if (!savedMovies) {
         refs.emptyLibrary.classList.remove('visually-hidden');
+        refs.libraryList.classList.add('visually-hidden');
+        return;
       }
       const genresData = getDataFromLocalStorage(DATA_STORAGE);
-      refs.libraryList.innerHTML = movies
+      refs.libraryList.innerHTML = savedMovies
         .map(
           ({
             poster_path,
@@ -129,40 +130,54 @@ src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
     }
 
     refs.libraryContainer.addEventListener('click', onFilmCardClick);
-  }
-  function addPagination() {
-    const savedMovies = getDataFromLocalStorage(activeBtn);
-    let totalResults = savedMovies.length;
-    let opts = {
-      totalItems: `${totalResults}`,
-      itemsPerPage: 5,
-      visiblePages: 5,
-      centerAlign: true,
-      // currentPage: 1,
-    };
 
-    const pagination = new Pagination(refs.paginationContainer, opts);
-    pagination.reset(totalResults);
-    pagination.on('beforeMove', e => {
-      currentPage = e.page;
-      // opts.currentPage = currentPage;
+    function addPagination() {
+      const savedMovies = getDataFromLocalStorage(activeBtn);
       if (!savedMovies) {
         return;
       }
+      let totalResults = savedMovies.length;
+      let opts = {
+        totalItems: `${totalResults}`,
+        itemsPerPage: 12,
+        visiblePages: 5,
+        centerAlign: true,
+        currentPage: 1,
+      };
+
       function chunkArray(array, itemsPerPage) {
         const chunkedArray = [];
         let index = 0;
         while (index < array.length) {
           const item = array.slice(index, itemsPerPage + index);
-          result.push(item);
+          chunkedArray.push(item);
           index += itemsPerPage;
         }
         return chunkedArray;
       }
-      const chunkedSavedMovies = chunkArray((savedMovies, opts.itemsPerPage));
-      console.log(chunkArray((savedMovies, opts.itemsPerPage)));
-      renderSavedMovies(chunkedSavedMovies[currentPage]);
-    });
+
+      const chunkedSavedMovies = chunkArray(savedMovies, opts.itemsPerPage);
+      let moviesForCurrentPage = chunkedSavedMovies[opts.currentPage - 1];
+
+      renderSavedMovies(moviesForCurrentPage);
+
+      const pagination = new Pagination(refs.paginationContainer, opts);
+
+      pagination.reset(totalResults);
+
+      pagination.on('beforeMove', e => {
+        opts.currentPage = e.page;
+        moviesForCurrentPage = chunkedSavedMovies[opts.currentPage - 1];
+        renderSavedMovies(moviesForCurrentPage);
+
+        window.scrollTo({
+          behavior: 'smooth',
+          top: 0,
+        });
+      });
+
+      pagination.reset(totalResults);
+    }
   }
 }
 
