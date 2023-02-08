@@ -14,7 +14,7 @@ function onTrailerBtn() {
       trailerBtn.classList.remove('trailer-btn');
       trailerBtn.classList.add('trailer-false-request');
       trailerBtn.innerHTML = `Oops... We missed the trailer :(`;
-      setTimeout(showNotification, 3000);
+      setTimeout(showNotification, 4000);
       function showNotification() {
         trailerBtn.innerHTML = '';
       }
