@@ -130,9 +130,9 @@ const dev = [
     text: `13`,
     img: photo14,
     ml: `#`,
-    tg: `#`,
+    tg: `https://t.me/KostyaProkhorchuk`,
     ln: `#`,
-    git: `#`,
+    git: `https://github.com/Konstantin2023`,
   },
 ];
 const refs = {
