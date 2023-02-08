@@ -161,6 +161,8 @@
     margin-left: auto;
     margin-right: auto;
     width: 240px;
+    height: 236px;
+    overflow: auto;
   }
 
   // Кнопки добавлення та видилення фільму
@@ -407,6 +409,8 @@
     line-height: 1.7;
     color: #000000;
     text-align: justify;
+    height: 236px;
+    overflow: auto;
   }
 
   // Кнопки добавлення та видилення фільму
@@ -522,7 +526,7 @@
 
     &.is-hidden {
       visibility: hidden;
-      opacity: 1;
+      opacity: 0;
       pointer-events: none;
     }
   }
@@ -586,7 +590,7 @@
     font-size: 30px;
     line-height: 1.2;
     // color: var(--main-text-color);
-    margin-top: 40px;
+    margin-bottom: 20px;
   }
 
   .img-posters {
@@ -657,6 +661,8 @@
     line-height: 1.7;
     color: #000000;
     text-align: justify;
+    height: 160px;
+    overflow: auto;
   }
 
   // Кнопки добавлення та видилення фільму
