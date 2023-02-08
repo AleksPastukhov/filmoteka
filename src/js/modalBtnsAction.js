@@ -21,14 +21,18 @@ export function saveMovieToLibrary(movie) {
     if (isMovieInStorage('watched', currentMovie)) {
       changeBtnName('watched', currentMovie);
       refs.addToWatchedBtn.dataset.action = 'remove';
+      refs.addToWatchedBtn.classList.add('added');
     } else {
       refs.addToWatchedBtn.dataset.action = 'add';
+      refs.addToWatchedBtn.classList.remove('added');
     }
     if (isMovieInStorage('queue', currentMovie)) {
       changeBtnName('queue', currentMovie);
       refs.addToQueueBtn.dataset.action = 'remove';
+      refs.addToQueueBtn.classList.add('added');
     } else {
       refs.addToQueueBtn.dataset.action = 'add';
+      refs.addToQueueBtn.classList.remove('added');
     }
   }
   checkLS();
