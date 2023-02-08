@@ -21,16 +21,14 @@
 .toolbar {
   position: absolute;
   top: 0;
-  right: calc(100%/2 - 660px);
+  right: calc(100% / 2 - 660px);
   padding: 12px 12px;
   z-index: 0;
   @media screen and (max-width: 1279.9px) {
- right: calc(100%/2 - 390px);
-  
- }
+    right: calc(100% / 2 - 390px);
+  }
   @media screen and (max-width: 767px) {
-  right: calc(100%/2 - 150px);
-   
+    right: calc(100% / 2 - 150px);
   }
 }
 
@@ -42,11 +40,26 @@
 }
 
 .theme-switch__icon {
-  color: var(--main-white-color);
+  fill: var(--main-white-color);
   height: 15px;
   width: 15px;
   margin-right: 8px;
   margin-left: 8px;
+  transition: transform 250ms var(--timing-function);
+}
+
+.sun-icon {
+  margin-right: 11px;
+}
+
+.theme-switch__icon.sun-icon.is-selected-sun {
+  transform: scale(1.7) rotate(360deg);
+  fill: yellow;
+}
+
+.theme-switch__icon.moon-icon.is-selected-moon {
+  transform: scale(1.4) rotate(360deg);
+  fill: lightblue;
 }
 
 .theme-switch__control {
