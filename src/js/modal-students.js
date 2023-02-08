@@ -6,24 +6,24 @@ import photo1 from '../images/team/photo1.jpg';
 import photo2 from '../images/team/photo2.jpg';
 import photo3 from '../images/team/photo3.jpg';
 import photo4 from '../images/team/photo0.jpg';
-import photo5 from '../images/team/photo0.jpg';
+import photo5 from '../images/team/photo5.jpg';
 import photo6 from '../images/team/photo6.jpg';
 import photo7 from '../images/team/photo7.jpg';
 import photo8 from '../images/team/photo8.jpg';
 import photo9 from '../images/team/photo0.jpg';
 import photo10 from '../images/team/photo0.jpg';
 import photo11 from '../images/team/photo11.jpg';
-// import photo12 from '../images/team/photo12.jpg';
+import photo12 from '../images/team/photo12.jpg';
 import photo13 from '../images/team/photo0.jpg';
 const dev = [
   {
     name: `Aleks Pastukhov`,
     text: `1`,
     img: photo1,
-    ml: `#`,
-    tg: `#`,
-    ln: `#`,
-    git: `#`,
+    ml: `oleksandr.s.pastukhov@gmail.com`,
+    tg: `https://t.me/aleks_pastukhov`,
+    ln: `https://www.linkedin.com/in/oleksandr-pastukhov/`,
+    git: `https://github.com/AleksPastukhov`,
   },
   {
     name: `Nikita Osokin`,
@@ -118,7 +118,7 @@ const dev = [
   {
     name: `Kravchenko Yehor`,
     text: `12`,
-//     img: photo12,
+    img: photo12,
     ml: `Sugonegor@gmail.com`,
     tg: `https://t.me/Egorin93`,
     ln: `#`,
@@ -188,7 +188,7 @@ function createMarkupFirst(array) {
         <h3 class="modal_students_name">${array[0].name}</h3>
         <ul class="modal_list">
           <li class="modal_list_item">
-            <a class="modal_list_link" href="mailto:${array[0].ml}">
+            <a class="modal_list_link" href="mailto:${array[0].ml}" target="_blank">
               <div class="modal_list_con">
                 <svg class="modal_list_icon" width="15" height="15">
                   <use href="${iconEnvelope}#icon-envelope"></use>
@@ -199,7 +199,7 @@ function createMarkupFirst(array) {
               </span></a>
           </li>
           <li class="modal_list_item">
-            <a class="modal_list_link" href="${array[0].tg}">
+            <a class="modal_list_link" href="${array[0].tg}" target="_blank">
               <div class="modal_list_con">
                 <svg class="modal_list_icon" width="15" height="15">
                   <use href="${iconSend}#icon-send"></use>
@@ -208,7 +208,7 @@ function createMarkupFirst(array) {
                  Telegram </span></a>
           </li>
           <li class="modal_list_item">
-            <a class="modal_list_link" href="${array[0].ln}">
+            <a class="modal_list_link" href="${array[0].ln}" target="_blank">
               <div class="modal_list_con">
                 <svg class="modal_list_icon" width="15" height="15">
                   <use href="${iconLinkedin}#icon-linkedin"></use>
@@ -219,7 +219,7 @@ function createMarkupFirst(array) {
               </span></a>
           </li>
           <li class="modal_list_item">
-            <a class="modal_list_link" href="${array[0].git}">
+            <a class="modal_list_link" href="${array[0].git}" target="_blank">
               <div class="modal_list_con">
                 <svg class="modal_list_icon" width="15" height="15">
                   <use href="${iconGithub}#icon-github"></use>
