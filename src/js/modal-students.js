@@ -3,17 +3,17 @@ import iconSend from '../images/icons.svg';
 import iconLinkedin from '../images/icons.svg';
 import iconGithub from '../images/icons.svg';
 import photo1 from '../images/team/photo1.jpg';
-import photo2 from '../images/team/photo0.jpg';
+import photo2 from '../images/team/photo2.jpg';
 import photo3 from '../images/team/photo3.jpg';
 import photo4 from '../images/team/photo0.jpg';
 import photo5 from '../images/team/photo0.jpg';
-import photo6 from '../images/team/photo0.jpg';
+import photo6 from '../images/team/photo6.jpg';
 import photo7 from '../images/team/photo7.jpg';
-import photo8 from '../images/team/photo0.jpg';
+import photo8 from '../images/team/photo8.jpg';
 import photo9 from '../images/team/photo0.jpg';
 import photo10 from '../images/team/photo0.jpg';
 import photo11 from '../images/team/photo11.jpg';
-import photo12 from '../images/team/photo0.jpg';
+import photo12 from '../images/team/photo12.jpg';
 import photo13 from '../images/team/photo0.jpg';
 const dev = [
   {
@@ -29,10 +29,10 @@ const dev = [
     name: `Nikita Osokin`,
     text: `2`,
     img: photo2,
-    ml: `#`,
-    tg: `#`,
-    ln: `#`,
-    git: `# `,
+    ml: `hitchensnik@gmail.com `,
+    tg: `https://t.me/OsokinNikita`,
+    ln: `https://www.linkedin.com/in/nikita-osokin-developer`,
+    git: `https://github.com/OsokinNikita`,
   },
   {
     name: `Anastasia Knihnitska`,
@@ -65,10 +65,10 @@ const dev = [
     name: `Oleksandr Filippov`,
     text: `6`,
     img: photo6,
-    ml: `#`,
-    tg: `#`,
-    ln: `#`,
-    git: `#`,
+    ml: `alexfilp17@gmail.com`,
+    tg: `https://github.com/AlexFilp`,
+    ln: `https://www.linkedin.com/in/oleksandr-filippov-93b911263/`,
+    git: `https://t.me/Filippov_Oleksandr`,
   },
   {
     name: `Andrey Telnov`,
@@ -83,10 +83,10 @@ const dev = [
     name: `Mykhaylo Yervachov`,
     text: `8`,
     img: photo8,
-    ml: `#`,
-    tg: `#`,
-    ln: `#`,
-    git: `#`,
+    ml: `m.yervachov@gmail.com`,
+    tg: `https://t.me/Mixayl`,
+    ln: `https://www.linkedin.com/in/michael-yervach%C3%B6v-2b5b06170/`,
+    git: `https://github.com/MykhayloOdesa`,
   },
   {
     name: `Mykhailo Vasyliuk`,
@@ -116,13 +116,13 @@ const dev = [
     git: `#`,
   },
   {
-    name: `Egor`,
+    name: `Kravchenko Yehor`,
     text: `12`,
     img: photo12,
-    ml: `#`,
-    tg: `#`,
+    ml: `Sugonegor@gmail.com`,
+    tg: `https://t.me/Egorin93`,
     ln: `#`,
-    git: `#`,
+    git: `https://github.com/primarch93`,
   },
   {
     name: `Kostya`,
@@ -135,7 +135,7 @@ const dev = [
   },
 ];
 const refs = {
-  openModalBtn: document.querySelector('.footer__but'),
+  openModalBtn: document.querySelector('[data-modal-students-open]'),
   closeModalBtn: document.querySelector('[data-modal-students-close]'),
   modal: document.querySelector('[data-modal-students]'),
   tumb: document.querySelector(`.inverted_tumb`),
