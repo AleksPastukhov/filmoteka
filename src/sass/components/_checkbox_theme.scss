@@ -21,9 +21,17 @@
 .toolbar {
   position: absolute;
   top: 0;
-  right: 50%;
+  right: calc(100%/2 - 660px);
   padding: 12px 12px;
   z-index: 0;
+  @media screen and (max-width: 1279.9px) {
+ right: calc(100%/2 - 390px);
+  
+ }
+  @media screen and (max-width: 767px) {
+  right: calc(100%/2 - 150px);
+   
+  }
 }
 
 /* THEME SWITCH */
