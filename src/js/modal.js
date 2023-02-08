@@ -62,7 +62,6 @@ function onMovieCardClick(evt) {
       onCloseBtnClick();
     }
   }
-
   // Трейлер
   const trailerBtn = document.querySelector('.trailer-btn');
   const filmId = trailerBtn.getAttribute('data-id');

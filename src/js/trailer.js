@@ -14,6 +14,17 @@ function onTrailerBtn() {
       trailerBtn.classList.remove('trailer-btn');
       trailerBtn.classList.add('trailer-false-request');
       trailerBtn.innerHTML = `Oops... We missed the trailer :(`;
+      setTimeout(showNotification, 3000);
+      function showNotification() {
+        trailerBtn.innerHTML = '';
+      }
+      // setInterval(function setNotification() {
+      //   trailerBtn.innerHTML = '';
+      //   console.log(trailerBtn);
+      // }, 2000);
+      // if (trailerBtn) {
+      //   clearInterval(setNotification);
+      // }
     }
     const trailerKey = results[0].key;
 
@@ -30,14 +41,20 @@ function onTrailerBtn() {
 </div>
 `);
     instance.show();
-
+    // if (instance.show()) {
+    //   window.addEventListener('keydown', onEscape);
+    //   function onEscape(evt) {
+    //     if (evt.code === 'Escape') {
+    //       console.log(evt);
+    //     }
+    //   }
+    // }
     const trailerCLosedBtn = document.querySelector('.trailer-btn-close');
 
     trailerCLosedBtn.addEventListener('click', onCloseBtn);
     function onCloseBtn() {
       instance.close();
     }
-
     // trailerBtn.addEventListener('keydown', onEscape);
     // function onEscape(evt) {
     //   if (evt.code === 'Escape') {
