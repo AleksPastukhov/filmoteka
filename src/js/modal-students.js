@@ -166,6 +166,8 @@ refs.btnLeft.addEventListener(`click`, slidersInvers);
 function openModal() {
   refs.modal.classList.remove('is-hidden');
   refs.tumb.innerHTML = createMarkupFirst(dev);
+  window.addEventListener('keydown', onKeyEscpPress);
+  refs.modal.addEventListener('click', onBackdropClick);
 }
 function closeModal() {
   refs.modal.classList.add('is-hidden');
@@ -173,7 +175,21 @@ function closeModal() {
   refs.btnRight.classList.remove('visually-hidden');
   index = 0;
 }
+//ЗАКРЫТИЕ ПО ESCP И ПО МИСКЛИКУ
+function onKeyEscpPress(evt) {
+  if (evt.code !== 'Escape') {
+    return;
+  }
 
+  closeModal();
+  window.removeEventListener('keydown', onKeyEscpPress);
+}
+function onBackdropClick(evt) {
+  if (evt.currentTarget === evt.target) {
+    closeModal();
+  }
+}
+// //////////////////////////
 let index = 0;
 function sliders() {
   index += 1;
