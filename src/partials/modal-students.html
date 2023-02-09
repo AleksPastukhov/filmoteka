@@ -1,5 +1,5 @@
 <!-- FT-23 Зверстати модалку (мобілка, планшет, десктоп) з інформацією про учасників вашої команди, яка відкриватиметься натисканням на текст "GoIT Students" у футері -->
-<div class="backdrop-m visually-hidden" data-modal-students>
+<div class="backdrop is-hidden" data-modal-students>
   <div class="modal_students">
     <button
       class="modal_students_button"
@@ -7,7 +7,7 @@
       aria-label="Close the modal window"
       data-modal-students-close
     >
-      <svg width="11" height="11">
+      <svg class="modal_students_close" width="15" height="15">
         <use href="./images/icons.svg#close"></use>
       </svg>
     </button>
@@ -17,7 +17,7 @@
       type="button"
       aria-label="Click to slide left"
     >
-      <svg width="20" height="40">
+      <svg width="30" height="30">
         <use href="./images/icons.svg#icon-keyboard_arrow_left"></use>
       </svg>
     </button>
@@ -26,15 +26,17 @@
       type="button"
       aria-label="Click to slide right"
     >
-      <svg width="20" height="40">
+      <svg width="30" height="30">
         <use href="./images/icons.svg#icon-keyboard_arrow_right"></use>
       </svg>
     </button>
     <div class="inverted_tumb">
+      
       <!-- ФРАГМЕНТ ИЗМЕНЯЕМОЙ РАЗМЕТКИ -->
       <!-- <img class="modal_foto img" src="./images/team/1.jpg" alt="" width="200" height="200" />
       <div>
         <h3 class="modal_students_name">name</h3>
+        <p class="modal_students_role"></p>
         <ul class="modal_list">
           <li class="modal_list_item">
             <a class="modal_list_link " href="#">
