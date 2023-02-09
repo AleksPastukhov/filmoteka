@@ -1,6 +1,6 @@
 //Переніс стилі з папки base _modal.scss. Змінив назву файлу.
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767.9px) {
   .modal-film-main {
     position: absolute;
     top: 50%;
@@ -260,7 +260,7 @@
 
 // For Tablet
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199.9px) {
   .backdrop {
     position: fixed;
     z-index: 100;
