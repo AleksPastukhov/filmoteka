@@ -21,7 +21,7 @@ export function renderFilmsToGallery(filmsArray) {
 
         return `<li class="library__item" id="${id}">
         
-        <a href="" class="library__link"><div class="library__thumb">
+        <a href="" class="library__link" aria-label="Movie data"><div class="library__thumb">
       <img class="library__image" 
 src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
     </div>
