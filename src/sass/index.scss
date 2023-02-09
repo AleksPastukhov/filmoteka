@@ -4,6 +4,7 @@
 @import './utils/variables';
 @import './utils/visually-hidden';
 @import './utils/basicLightbox';
+@import './utils/mixins';
 @import './components/container-home';
 @import './components/container-library';
 @import './components/footer';
@@ -13,7 +14,7 @@
 @import './layout/button';
 @import './layout/film-card';
 @import './layout/loader';
-@import './layout/modal-film';
+@import './layout/modal-film-card';
 @import './layout/paginations';
 @import './layout/roll-up-btn.scss';
 @import './components/checkbox_theme';
