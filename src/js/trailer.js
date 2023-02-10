@@ -25,6 +25,7 @@ function onTrailerBtn() {
       // if (trailerBtn) {
       //   clearInterval(setNotification);
       // }
+      return;
     }
     const trailerKey = results[0].key;
 
