@@ -1,5 +1,3 @@
-// FT-14 За натисканням на кнопку "Watched" показуються переглянуті фільми користувача
-// FT-15 За натисканням на кнопку "Queue" показуються фільми додані в чергу користувача
 import { Spinner } from './loader.js';
 import { getDataFromLocalStorage } from './local-storage-info';
 import { onFilmCardClick } from './modal';
