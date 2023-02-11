@@ -1,5 +1,3 @@
-// FT-18 За натисканням на кнопку "Add to watched" фільм додається до переглянутих фільмів поточного користувача (localStorage)
-// FT-19 За натисканням на кнопку "Add to queue" фільм додається до черги поточного користувача (localStorage)
 import {
   saveDataToLocalStorage,
   getDataFromLocalStorage,
