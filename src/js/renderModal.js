@@ -111,7 +111,3 @@ function onRenderModal(e) {
   modalCont.innerHTML = modalMarkup;
   saveMovieToLibrary(getDataFromLocalStorage('currentMovie'));
 }
-
-// <button class="svg-close">
-//   <i class="ri-close-circle-line"></i>
-// </button>;

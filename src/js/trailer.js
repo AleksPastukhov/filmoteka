@@ -1,5 +1,3 @@
-// FT-24 Реалізувати показ трейлеру фільма (мобілка, планшет, десктоп).
-
 import * as basicLightbox from 'basiclightbox';
 import 'remixicon/fonts/remixicon.css';
 import FilmsApiService from './films-service';
@@ -18,13 +16,6 @@ function onTrailerBtn() {
       function showNotification() {
         trailerBtn.innerHTML = '';
       }
-      // setInterval(function setNotification() {
-      //   trailerBtn.innerHTML = '';
-      //   console.log(trailerBtn);
-      // }, 2000);
-      // if (trailerBtn) {
-      //   clearInterval(setNotification);
-      // }
       return;
     }
     const trailerKey = results[0].key;
@@ -42,26 +33,11 @@ function onTrailerBtn() {
 </div>
 `);
     instance.show();
-    // if (instance.show()) {
-    //   window.addEventListener('keydown', onEscape);
-    //   function onEscape(evt) {
-    //     if (evt.code === 'Escape') {
-    //       console.log(evt);
-    //     }
-    //   }
-    // }
     const trailerCLosedBtn = document.querySelector('.trailer-btn-close');
 
     trailerCLosedBtn.addEventListener('click', onCloseBtn);
     function onCloseBtn() {
       instance.close();
     }
-    // trailerBtn.addEventListener('keydown', onEscape);
-    // function onEscape(evt) {
-    //   if (evt.code === 'Escape') {
-    //     instance.close();
-    //     trailerBtn.removeEventListener('keydown', onEscape);
-    //   }
-    // }
   });
 }

@@ -1,7 +1,6 @@
 import { onRenderModal } from './renderModal';
 import { onTrailerBtn } from './trailer';
 import { removeDataFromLocalStorage } from './local-storage-info';
-import { saveMovieToLibrary } from './modalBtnsAction';
 import { libraryHandler } from './myLibrary';
 
 const refs = {

@@ -3,11 +3,9 @@ import { getDataFromLocalStorage } from './local-storage-info';
 import { DATA_STORAGE } from './genres';
 import { getGenresFromId } from './getGenresFromId';
 
-const list = document.querySelector('.cards__list');
-
 export function renderFilmsToGallery(filmsArray) {
   const genresData = getDataFromLocalStorage(DATA_STORAGE);
-  const markup = filmsArray
+  return filmsArray
     .map(
       ({
         poster_path,
@@ -51,8 +49,5 @@ src="${poster_path ? basePosterURL : ComingSoonImg}"  alt="${title}" />
 </li>`;
       }
     )
-
     .join('');
-
-  list.innerHTML = markup;
 }

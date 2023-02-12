@@ -9,6 +9,7 @@ const FILMS_DATA = 'films-data';
 const spinner = new Spinner('.spinner');
 
 const paginationContainer = document.querySelector('#pagination');
+const list = document.querySelector('.cards__list');
 
 const filmsApiService = new FilmsApiService();
 
@@ -47,7 +48,7 @@ function getFilmsOnSubmit(evt) {
       }
       saveDataToLocalStorage(FILMS_DATA, films.results);
 
-      renderFilmsToGallery(films.results);
+      list.innerHTML = renderFilmsToGallery(films.results);
       spinner.removeSpinner();
 
       const pagination = new Pagination(paginationContainer, {
