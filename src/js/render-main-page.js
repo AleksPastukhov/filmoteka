@@ -44,7 +44,7 @@ async function onFirstLoad() {
           }
           saveDataToLocalStorage(FILMS_DATA, data.results);
 
-          renderFilmsToGallery(data.results);
+          list.innerHTML = renderFilmsToGallery(data.results);
 
           window.scrollTo({
             behavior: 'smooth',
